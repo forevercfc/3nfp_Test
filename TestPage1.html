@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>볼거리 상세 데모</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      box-sizing: border-box;
+    }
+    html,
+    body {
+      position: relative;
+      height: 100%;
+    }
+    .navbar {
+      position: fixed;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      z-index: 99999;
+    }
+    .mainnav {
+      width: 90%;
+    }
+    .navbar-brand {
+      color: #f67676;
+      font-weight: bold;
+    }
+    .bg_post {
+      background: url("https://an2-img.amz.wtchn.net/image/v2/xlezofQzQMgA7xhq4UpQYg.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk1Ua3lNSGd4TURnd2NUZ3dJbDBzSW5BaU9pSXZkakl2YzNSdmNtVXZhVzFoWjJVdk1UY3dNakF5TWpNeE9UTTFNams1TlRnNU5TSjkudjFTZ0FHTXp6UkM2ckR5bmZfUFVyZVVHWGhqa2VMbDNsWE9WSl9YX3lIRQ")
+        no-repeat;
+      background-position: center;
+      background-size: cover;
+      height: 500px;
+    }
+    .bg_post_top {
+      position: relative;
+      top: 0px;
+      background: linear-gradient(rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0) 100%);
+      width: 100%;
+      height: 100px;
+    }
+    .bg_post_btm {
+      position: relative;
+      top: 100px;
+      background: linear-gradient(
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 0.3) 32.47%,
+        rgba(0, 0, 0, 0.6) 67.36%,
+        rgba(0, 0, 0, 0.8) 100%
+      );
+      width: 100%;
+      height: 300px;
+    }
+
+    .maintext {
+      position: absolute;
+      top: 300px;
+      left: 10%;
+      color: white;
+      width: 90%;
+    }
+    .display-4 {
+      font-size: 36px;
+      font-weight: bold;
+    }
+    .maintext .lead {
+      font-size: 14px;
+      font-weight: bold;
+    }
+    .custom-row-container {
+      width: 90%;
+      margin: 40px auto;
+      color: #8c8c8c;
+      font-weight: bold;
+      display: flex;
+    }
+    .poster-img-size {
+      width: 300px;
+    }
+    .custom-img-size {
+      width: 280px;
+      height: 400px;
+    }
+
+    .poster_text {
+      margin: 0;
+      padding: 0;
+    }
+    /* Add gap between columns */
+    .gap-30 {
+      gap: 30px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .maker {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+    .makerList {
+      width: 90%;
+      margin-left: 5%;
+    }
+
+    /* ====================스위퍼================= */
+    .swp_title h3 {
+      margin-left: 5%;
+    }
+    .swiper {
+      width: 90%;
+      height: auto;
+      min-width: 500px;
+    }
+
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .swiper-slide img {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      min-width: 100px;
+    }
+
+    .swiper {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+      color: lightgray;
+    }
+
+    @media screen and (max-width: 1050px) {
+      .gap-30 p {
+        width: 100%;
+      }
+      .poster-img-size,
+      .custom-img-size {
+        width: 100%;
+        height: auto;
+      }
+    }
+  </style>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-transparent navbar-dark">
+      <div class="container-fluid mainnav">
+        <a class="navbar-brand" href="#">CHOOGET</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarScroll"
+          aria-controls="navbarScroll"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarScroll">
+          <ul
+            class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll"
+            style="--bs-scroll-height: 100px"
+          >
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Link
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" aria-disabled="true">Link</a>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-light" type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <div class="jumbotron jumbotron-fluid bg_post">
+      <div class="bg_post_top"></div>
+      <div class="bg_post_btm"></div>
+      <div class="container maintext">
+        <h1 class="display-4">웡카</h1>
+        <p class="lead">2023 · 판타지/모험/코미디/뮤지컬/가족 · 미국</p>
+        <p class="lead">1시간 56분 · 전체</p>
+        <p class="lead">예매 순위 1위(36%) · 개봉 4일째 · 누적 관객 35.2만명</p>
+      </div>
+    </div>
+
+    <div class="custom-row-container">
+      <div class="row gap-30">
+        <div class="col-2 poster-img-size">
+          <img
+            src="https://an2-img.amz.wtchn.net/image/v2/Vnn_KYM-QxlK00ydZiSpKA.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk5Ea3dlRGN3TUhFNE1DSmRMQ0p3SWpvaUwzWXlMM04wYjNKbEwybHRZV2RsTHpFM01ESXdNakl6TURJek1qQXdOVGs1TnpFaWZRLnZXakM5cEZMT2hzLXhnOXl3dGpsdU1RVHpZSUw2NFRBazRsZ3RiUFdhdXc"
+            alt=""
+            class="custom-img-size"
+          />
+        </div>
+        <div class="col-8 poster_text">
+          <p>
+            세상에서 가장 달콤한 여정 <br />
+            좋은 일은 모두 꿈에서부터 시작된다!
+            <br />
+            <br /><br />
+            마법사이자 초콜릿 메이커 ‘윌리 웡카’의 꿈은 디저트의 성지, ‘달콤
+            백화점’에 자신만의 초콜릿 가게를 여는 것. 가진 것이라고는 낡은 모자
+            가득한 꿈과 단돈 12소베른 뿐이지만 특별한 마법의 초콜릿으로 사람들을
+            사로잡을 자신이 있다.
+            <br /><br />
+
+            하지만 먹을 것도, 잠잘 곳도, 의지할 사람도 없는 상황 속에서 낡은
+            여인숙에 머물게 된 ‘웡카’는 ‘스크러빗 부인’과 ‘블리처’의 계략에 빠져
+            눈더미처럼 불어난 숙박비로 인해 순식간에 빚더미에 오른다. 게다가
+            밤마다 초콜릿을 훔쳐가는 작은 도둑 ‘움파 룸파’의 등장과 ‘달콤
+            백화점’을 독점한 초콜릿 카르텔의 강력한 견제까지. 세계 최고의 초콜릿
+            메이커가 되는 길은 험난하기만 한데…
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="row maker">
+      <div class="col makerList">
+        <h3>출연/제작</h3>
+        <p>감독 : 폴 킹</p>
+        <p>주연 : 티모시 살라메</p>
+        <p>조연 : 케일라 레인, 올리비아 콜맨, 톰데이비스, 휴 그랜트</p>
+      </div>
+    </div>
+
+    <div class="row swp">
+      <div class="col swp_title">
+        <h3>추천 영화</h3>
+        <!-- Swiper -->
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img
+                src="https://an2-img.amz.wtchn.net/image/v2/Vnn_KYM-QxlK00ydZiSpKA.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk5Ea3dlRGN3TUhFNE1DSmRMQ0p3SWpvaUwzWXlMM04wYjNKbEwybHRZV2RsTHpFM01ESXdNakl6TURJek1qQXdOVGs1TnpFaWZRLnZXakM5cEZMT2hzLXhnOXl3dGpsdU1RVHpZSUw2NFRBazRsZ3RiUFdhdXc"
+                alt=""
+              />
+              <p>웡카</p>
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="https://an2-img.amz.wtchn.net/image/v2/Vnn_KYM-QxlK00ydZiSpKA.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk5Ea3dlRGN3TUhFNE1DSmRMQ0p3SWpvaUwzWXlMM04wYjNKbEwybHRZV2RsTHpFM01ESXdNakl6TURJek1qQXdOVGs1TnpFaWZRLnZXakM5cEZMT2hzLXhnOXl3dGpsdU1RVHpZSUw2NFRBazRsZ3RiUFdhdXc"
+                alt=""
+              />
+              <p>웡카</p>
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="https://an2-img.amz.wtchn.net/image/v2/Vnn_KYM-QxlK00ydZiSpKA.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk5Ea3dlRGN3TUhFNE1DSmRMQ0p3SWpvaUwzWXlMM04wYjNKbEwybHRZV2RsTHpFM01ESXdNakl6TURJek1qQXdOVGs1TnpFaWZRLnZXakM5cEZMT2hzLXhnOXl3dGpsdU1RVHpZSUw2NFRBazRsZ3RiUFdhdXc"
+                alt=""
+              />
+              <p>웡카</p>
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="https://an2-img.amz.wtchn.net/image/v2/Vnn_KYM-QxlK00ydZiSpKA.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk5Ea3dlRGN3TUhFNE1DSmRMQ0p3SWpvaUwzWXlMM04wYjNKbEwybHRZV2RsTHpFM01ESXdNakl6TURJek1qQXdOVGs1TnpFaWZRLnZXakM5cEZMT2hzLXhnOXl3dGpsdU1RVHpZSUw2NFRBazRsZ3RiUFdhdXc"
+                alt=""
+              />
+              <p>웡카</p>
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="https://an2-img.amz.wtchn.net/image/v2/Vnn_KYM-QxlK00ydZiSpKA.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk5Ea3dlRGN3TUhFNE1DSmRMQ0p3SWpvaUwzWXlMM04wYjNKbEwybHRZV2RsTHpFM01ESXdNakl6TURJek1qQXdOVGs1TnpFaWZRLnZXakM5cEZMT2hzLXhnOXl3dGpsdU1RVHpZSUw2NFRBazRsZ3RiUFdhdXc"
+                alt=""
+              />
+              <p>웡카</p>
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="https://an2-img.amz.wtchn.net/image/v2/Vnn_KYM-QxlK00ydZiSpKA.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk5Ea3dlRGN3TUhFNE1DSmRMQ0p3SWpvaUwzWXlMM04wYjNKbEwybHRZV2RsTHpFM01ESXdNakl6TURJek1qQXdOVGs1TnpFaWZRLnZXakM5cEZMT2hzLXhnOXl3dGpsdU1RVHpZSUw2NFRBazRsZ3RiUFdhdXc"
+                alt=""
+              />
+              <p>웡카</p>
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="https://an2-img.amz.wtchn.net/image/v2/Vnn_KYM-QxlK00ydZiSpKA.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk5Ea3dlRGN3TUhFNE1DSmRMQ0p3SWpvaUwzWXlMM04wYjNKbEwybHRZV2RsTHpFM01ESXdNakl6TURJek1qQXdOVGs1TnpFaWZRLnZXakM5cEZMT2hzLXhnOXl3dGpsdU1RVHpZSUw2NFRBazRsZ3RiUFdhdXc"
+                alt=""
+              />
+              <p>웡카</p>
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="https://an2-img.amz.wtchn.net/image/v2/Vnn_KYM-QxlK00ydZiSpKA.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk5Ea3dlRGN3TUhFNE1DSmRMQ0p3SWpvaUwzWXlMM04wYjNKbEwybHRZV2RsTHpFM01ESXdNakl6TURJek1qQXdOVGs1TnpFaWZRLnZXakM5cEZMT2hzLXhnOXl3dGpsdU1RVHpZSUw2NFRBazRsZ3RiUFdhdXc"
+                alt=""
+              />
+              <p>웡카</p>
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="https://an2-img.amz.wtchn.net/image/v2/Vnn_KYM-QxlK00ydZiSpKA.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk5Ea3dlRGN3TUhFNE1DSmRMQ0p3SWpvaUwzWXlMM04wYjNKbEwybHRZV2RsTHpFM01ESXdNakl6TURJek1qQXdOVGs1TnpFaWZRLnZXakM5cEZMT2hzLXhnOXl3dGpsdU1RVHpZSUw2NFRBazRsZ3RiUFdhdXc"
+                alt=""
+              />
+              <p>웡카</p>
+            </div>
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      $(document).ready(function () {
+        $(window).scroll(function () {
+          // 스크롤 위치가 200px 이상일 때
+          if ($(this).scrollTop() > 200) {
+            // 네비게이션 바 클래스 변경
+            $(".navbar")
+              .removeClass("bg-transparent navbar-dark")
+              .addClass("bg-light navbar-light");
+            // 버튼 클래스 변경
+            $(".btn-outline-light")
+              .removeClass("btn-outline-light")
+              .addClass("btn-outline-dark");
+          } else {
+            // 스크롤이 최상단일 때
+            // 네비게이션 바 클래스 원래대로 변경
+            $(".navbar")
+              .removeClass("bg-light navbar-light")
+              .addClass("bg-transparent navbar-dark");
+            // 버튼 클래스 원래대로 변경
+            $(".btn-outline-dark")
+              .removeClass("btn-outline-dark")
+              .addClass("btn-outline-light");
+          }
+        });
+      });
+    </script>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 5,
+        spaceBetween: 30,
+        loop: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+    </script>
+  </body>
+</html>
