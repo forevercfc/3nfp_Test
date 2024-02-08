@@ -40,7 +40,6 @@
       padding: 0;
       list-style: none;
       box-sizing: border-box;
-      white-space: nowrap;
     }
     html,
     body {
@@ -152,13 +151,20 @@
     }
 
     /* ====================다열 캐로셀================= */
-    .swp_title h3 {
-      margin-left: 5%;
-    }
+
     .mySwiper .swiper {
-      width: 90%;
+      width: 80%;
       height: auto;
       min-width: 280px;
+    }
+    .swp_title {
+      height: 200px;
+      top: 50px;
+      position: relative;
+      background: url(https://lfmono2.cdn-nhncommerce.com/data/skin/front/moment/img/banner/slider_511517418/8a99a7aedf7f5b72ed10f7ce860fa625_21311.gif)
+        no-repeat;
+      background-size: 100%;
+      background-position: center;
     }
 
     .mySwiper .swiper-slide {
@@ -169,6 +175,9 @@
       justify-content: center;
       align-items: center;
       flex-direction: column;
+      border: 1px solid #dcdcdc;
+      padding: 10px;
+      border-radius: 10px;
     }
 
     .mySwiper .swiper-slide img {
@@ -177,11 +186,6 @@
       height: auto;
       object-fit: contain;
       min-width: 100px;
-    }
-
-    .mySwiper .swiper {
-      margin-left: auto;
-      margin-right: auto;
     }
 
     .mySwiper .swiper-button-next,
@@ -197,23 +201,43 @@
       }
     }
 
-    .m_text {
+    .P_dc_text {
       width: 100%;
       line-height: 20px;
       margin-top: 10px;
+      text-align: left;
     }
-    .m_title {
+    .cart {
+      width: 90%;
+      text-align: right;
+    }
+    .P_dc_title {
+      display: inline-block;
+      font-size: 1rem;
+      font-weight: bold;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      width: 180px; /* 텍스트를 표시할 너비 */
+    }
+    .P_dc_title:hover {
+      width: 300px;
+      text-decoration: underline;
+    }
+    .P_dc_per {
       font-size: 20px;
+      color: rgb(177, 3, 3);
       font-weight: bold;
     }
-    .m_year {
-      font-size: 15px;
+    .P_dc_price {
+      font-size: 18px;
+      font-weight: bold;
     }
-    .m_viewCnt {
+    .P_dc_oriPrice {
       font-size: 15px;
       color: dimgray;
+      text-decoration: line-through;
     }
-    .m_rank {
+    .P_number {
       width: 30px;
       height: 30px;
       text-align: center;
@@ -224,6 +248,7 @@
       color: white;
       font-weight: bold;
       opacity: 0.8;
+      border-radius: 10px;
     }
 
     /* ==========================스위퍼 끝========================== */
@@ -349,7 +374,26 @@
         </div>
         <div class="row">
           <h1 class="P_title">🔥따끈따끈 신상품</h1>
-          <div class="row row-cols-md-4 row-cols-xl-6 g-3">
+          <div class="row row-cols-md-4 row-cols-xl-5 g-3">
+            <div class="col">
+              <div class="card h-100 p-2">
+                <img
+                  src="https://lfmono2.cdn-nhncommerce.com/data/goods/24/02/06/1000001282/1000001282_main_017.jpg"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <p class="card-cart">
+                    <span class="material-symbols-outlined">
+                      shopping_cart
+                    </span>
+                  </p>
+                  <hr />
+                  <h5 class="card-title">조랭이 떡</h5>
+                  <p class="card-price">3,800 원</p>
+                </div>
+              </div>
+            </div>
             <div class="col">
               <div class="card h-100 p-2">
                 <img
@@ -522,6 +566,172 @@
               </div>
             </div>
           </div>
+          <br />
+          <hr />
+          <br />
+          <!-- =======================================할인특가 캐로셀=================================== -->
+          <div class="row swp">
+            <div class="col swp_title">
+              <!-- <h3>한정 특가 할인!!</h3>
+              <p>놓치면 후회하는 상품!</p> -->
+            </div>
+            <!-- Swiper -->
+            <div class="swiper mySwiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="P_number">1</div>
+                  <img
+                    src="https://cdn-mart.baemin.com/sellergoods/main/63f63439-a939-4369-8bd5-53c0f4f2ca24.jpg?h=300&w=300"
+                    alt=""
+                  />
+                  <p class="P_dc_text">
+                    <span class="material-symbols-outlined cart">
+                      shopping_cart
+                    </span>
+                    <br />
+                    <span class="P_dc_title">비브라 닭정육 브라질산12Kg</span>
+                    <br />
+                    <span class="P_dc_per">8%</span>
+                    <br />
+                    <span class="P_dc_oriPrice">48,900원</span>
+                    <span class="P_dc_price">44,900원</span>
+                  </p>
+                </div>
+                <div class="swiper-slide">
+                  <div class="P_number">2</div>
+                  <img
+                    src="https://cdn-mart.baemin.com/sellergoods/main/63f63439-a939-4369-8bd5-53c0f4f2ca24.jpg?h=300&w=300"
+                    alt=""
+                  />
+                  <p class="P_dc_text">
+                    <span class="P_dc_title">비브라 닭정육 브라질산12Kg</span>
+                    <br />
+                    <span class="P_dc_per">8%</span>
+                    <br />
+
+                    <span class="P_dc_oriPrice">48,900원</span>
+                    <span class="P_dc_price">44,900원</span>
+                  </p>
+                </div>
+                <div class="swiper-slide">
+                  <div class="P_number">3</div>
+                  <img
+                    src="https://cdn-mart.baemin.com/sellergoods/main/63f63439-a939-4369-8bd5-53c0f4f2ca24.jpg?h=300&w=300"
+                    alt=""
+                  />
+                  <p class="P_dc_text">
+                    <span class="P_dc_title">비브라 닭정육 브라질산12Kg</span>
+                    <br />
+                    <span class="P_dc_per">8%</span>
+                    <br />
+
+                    <span class="P_dc_oriPrice">48,900원</span>
+                    <span class="P_dc_price">44,900원</span>
+                  </p>
+                </div>
+                <div class="swiper-slide">
+                  <div class="P_number">4</div>
+                  <img
+                    src="https://cdn-mart.baemin.com/sellergoods/main/63f63439-a939-4369-8bd5-53c0f4f2ca24.jpg?h=300&w=300"
+                    alt=""
+                  />
+                  <p class="P_dc_text">
+                    <span class="P_dc_title">비브라 닭정육 브라질산12Kg</span>
+                    <br />
+                    <span class="P_dc_per">8%</span>
+                    <br />
+
+                    <span class="P_dc_oriPrice">48,900원</span>
+                    <span class="P_dc_price">44,900원</span>
+                  </p>
+                </div>
+                <div class="swiper-slide">
+                  <div class="P_number">5</div>
+                  <img
+                    src="https://cdn-mart.baemin.com/sellergoods/main/63f63439-a939-4369-8bd5-53c0f4f2ca24.jpg?h=300&w=300"
+                    alt=""
+                  />
+                  <p class="P_dc_text">
+                    <span class="P_dc_title">비브라 닭정육 브라질산12Kg</span>
+                    <br />
+                    <span class="P_dc_per">8%</span>
+                    <br />
+
+                    <span class="P_dc_oriPrice">48,900원</span>
+                    <span class="P_dc_price">44,900원</span>
+                  </p>
+                </div>
+                <div class="swiper-slide">
+                  <div class="P_number">6</div>
+                  <img
+                    src="https://cdn-mart.baemin.com/sellergoods/main/63f63439-a939-4369-8bd5-53c0f4f2ca24.jpg?h=300&w=300"
+                    alt=""
+                  />
+                  <p class="P_dc_text">
+                    <span class="P_dc_title">비브라 닭정육 브라질산12Kg</span>
+                    <br />
+                    <span class="P_dc_per">8%</span>
+                    <br />
+
+                    <span class="P_dc_oriPrice">48,900원</span>
+                    <span class="P_dc_price">44,900원</span>
+                  </p>
+                </div>
+                <div class="swiper-slide">
+                  <div class="P_number">7</div>
+                  <img
+                    src="https://cdn-mart.baemin.com/sellergoods/main/63f63439-a939-4369-8bd5-53c0f4f2ca24.jpg?h=300&w=300"
+                    alt=""
+                  />
+                  <p class="P_dc_text">
+                    <span class="P_dc_title">비브라 닭정육 브라질산12Kg</span>
+                    <br />
+                    <span class="P_dc_per">8%</span>
+                    <br />
+
+                    <span class="P_dc_oriPrice">48,900원</span>
+                    <span class="P_dc_price">44,900원</span>
+                  </p>
+                </div>
+                <div class="swiper-slide">
+                  <div class="P_number">8</div>
+                  <img
+                    src="https://cdn-mart.baemin.com/sellergoods/main/63f63439-a939-4369-8bd5-53c0f4f2ca24.jpg?h=300&w=300"
+                    alt=""
+                  />
+                  <p class="P_dc_text">
+                    <span class="P_dc_title">비브라 닭정육 브라질산12Kg</span>
+                    <br />
+                    <span class="P_dc_per">8%</span>
+                    <br />
+
+                    <span class="P_dc_oriPrice">48,900원</span>
+                    <span class="P_dc_price">44,900원</span>
+                  </p>
+                </div>
+                <div class="swiper-slide">
+                  <div class="P_number">9</div>
+                  <img
+                    src="https://cdn-mart.baemin.com/sellergoods/main/63f63439-a939-4369-8bd5-53c0f4f2ca24.jpg?h=300&w=300"
+                    alt=""
+                  />
+                  <p class="P_dc_text">
+                    <span class="P_dc_title">비브라 닭정육 브라질산12Kg</span>
+                    <br />
+                    <span class="P_dc_per">8%</span>
+                    <br />
+
+                    <span class="P_dc_oriPrice">48,900원</span>
+                    <span class="P_dc_price">44,900원</span>
+                  </p>
+                </div>
+              </div>
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
+            </div>
+          </div>
+
+          <div class="col"></div>
         </div>
       </div>
     </div>
@@ -557,16 +767,16 @@
           // 너비가 1100px 이하일 때
           1200: {
             slidesPerView: 5,
-            spaceBetween: 30,
+            spaceBetween: 20,
           },
           768: {
             slidesPerView: 4,
-            spaceBetween: 20,
+            spaceBetween: 10,
           },
           // 너비가 780px 이하일 때
           100: {
-            slidesPerView: 3,
-            spaceBetween: 10,
+            slidesPerView: 2,
+            spaceBetween: 5,
           },
         },
       });
