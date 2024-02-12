@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>먹거리 리스트</title>
+    <!-- ===============부트스트랩================ -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      box-sizing: border-box;
+    }
+    html,
+    body {
+      position: relative;
+      height: 100%;
+      background-color: #f1f1f2;
+    }
+
+    .R_row {
+      position: relative;
+      top: 100px;
+    }
+    /* =======네브바======== */
+    .navbar {
+      position: fixed;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      z-index: 99999;
+    }
+    .mainnav {
+      width: 90%;
+    }
+    .navbar-brand {
+      color: #f67676;
+      font-weight: bold;
+    }
+
+    .card-title {
+      margin-top: 30px;
+    }
+    .card-body {
+      font-size: 20px;
+    }
+    .R_btn {
+      margin-top: 50px;
+      font-weight: bold;
+      font-size: 20px;
+      width: 200px;
+      height: 50px;
+      border-radius: 10px;
+    }
+    .R_btn:hover {
+      background-color: black;
+      color: white;
+    }
+  </style>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-light navbar-light mb-5">
+      <div class="container-fluid mainnav">
+        <a class="navbar-brand" href="index.html">CHUGET</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarScroll"
+          aria-controls="navbarScroll"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarScroll">
+          <ul
+            class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll"
+            style="--bs-scroll-height: 100px"
+          >
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Link
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" aria-disabled="true">Link</a>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-light" type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="row R_row">
+        <div class="col">
+          <h1>먹거리를 추천해드려요~~!</h1>
+          <hr />
+          <div class="card mb-3">
+            <div class="row g-5">
+              <div class="col-md-4">
+                <img
+                  src="https://lfmono2.cdn-nhncommerce.com/data/goods/22/05/21/1000000506/1000000506_detail_048.png"
+                  class="img-fluid rounded-start"
+                  alt="..."
+                />
+              </div>
+              <div class="col-md-8">
+                <h3 class="card-title">수제 타코야끼 1.2kg(30g*40ea)</h3>
+                <hr />
+                <div class="card-body">
+                  <dl class="row">
+                    <dt class="col-1 text-center">1</dt>
+                    <dd class="col-11">
+                      A재료:타코야키파우더,가츠오부시(가다랭이포),타코야끼소스,파래김가루,마요네즈,
+                      쪽파,문어,텐카츠,식용유,타코야끼팬
+                    </dd>
+                    <hr />
+
+                    <dt class="col-sm-1 text-center">2</dt>
+                    <dd class="col-sm-11">
+                      일본식자재파는곳에 가면 저렇게 다꼬파우더와 텐카츠그리고
+                      파래김가루를 팔아요~ 저는 일부러 대용양을 샀어요~ 두고두고
+                      먹으려구요 ㅎㅎㅎ 텐카츠가 없으시면 새우깡이나 감자깡을
+                      부셔서 대체사용가능합니다. 다코파우더가 없다면
+                      가츠오부시와 부침가루를 섞어서 사용하시면 됩니다.
+                    </dd>
+                    <hr />
+
+                    <dt class="col-sm-1 text-center">3</dt>
+                    <dd class="col-sm-11">
+                      그리고 중요한 재료중에 하나! 마요네즈와 타코야키소스를
+                      준비합니다. 그리고 쪽파를 준비해서 얇게 다져서
+                      준비했어요^^
+                    </dd>
+                    <hr />
+
+                    <dt class="col-sm-1 text-center">4</dt>
+                    <dd class="col-sm-11">
+                      그리고 저는 문어를 만질 자신이 없어 손질된 문어를 따로
+                      구매했어요 건문어를 처음에 사용하려 했으나, 건문어를
+                      사용하실분은 4시간이상은 불려야할거 같아요 저는
+                      1시간정도를 불려서 사용해봤는데도 딱딱하더라구요~ 그래서
+                      손질된 생문어를 따로 구매후 살짝 데쳐서 찬물에 헹구어
+                      주었습니다.
+                    </dd>
+                    <hr />
+
+                    <dt class="col-sm-1 text-center">5</dt>
+                    <dd class="col-sm-11">
+                      문어를 데쳤으면 작게 썰어서 준비합니다. 저는 대략적으로
+                      가로세로 1cm정도크기로 썰었어요
+                    </dd>
+                    <hr />
+                    <dt class="col-sm-1 text-center">6</dt>
+                    <dd class="col-sm-11">
+                      타코파우더에 계란을 2개를 넣고 물을 넣은후 섞어주었어요
+                      봉지에 적혀있는 배합은
+                      다코파우더1kg+물3,200ml+계란6개+우유200ml+만능다시100ml
+                      라고 적혀있으니 참고해주세요.
+                    </dd>
+                    <hr />
+                    <dt class="col-sm-1 text-center">7</dt>
+                    <dd class="col-sm-11">
+                      타코야끼팬을 준비합니다. 그리고 팬에 기름을 흥건할정도로
+                      칠해줍니다. 이제 불을켜서 팬을 달궈준뒤 팬이 달아오르면
+                      불을 줄인후 반죽물을 가득안차게 부어줍니다.
+                    </dd>
+                    <hr />
+                    <dt class="col-sm-1 text-center">8</dt>
+                    <dd class="col-sm-11">
+                      반죽물에 문어 쏙쏙! 그리고덴카츠 듬뿍~! 쪽파도 듬뿍듬뿍~!
+                      마무리로 반죽물을 더 가득 부어줍니다.
+                    </dd>
+                    <hr />
+                    <dt class="col-sm-1 text-center">9</dt>
+                    <dd class="col-sm-11">
+                      자, 이제 꼬챙이가 필요할 시기네요! 요 꼬챙이가 없다면
+                      젓가락을 사용하셔도 됩니다. 꼬챙이를 이용해서 둥굴게
+                      안쪽으로 밀면서 해줍니다.
+                    </dd>
+                    <hr />
+                    <dt class="col-sm-1 text-center">10</dt>
+                    <dd class="col-sm-11">
+                      그릇에 타코야끼를 담고, 가츠오부시를 살짝만 뿌려줍니다.
+                      그리고 마요네즈+타코야끼소스를 골고루 뿌려줍니다. 그리고
+                      비쥬얼 이쁜 파래가루를 뿌려준뒤,
+                    </dd>
+                    <hr />
+                    <dt class="col-sm-1 text-center">11</dt>
+                    <dd class="col-sm-11">
+                      가츠오부시를 듬뿍 뿌려주면 타코야끼 만들기 완성입니다.!
+                    </dd>
+                  </dl>
+                </div>
+                <div>
+                  <a href="R_result.html">
+                    <button class="R_btn">상세보기</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr />
+          <!-- ==============================메뉴한칸========================= -->
+          <div class="card mb-3">
+            <div class="row g-5">
+              <div class="col-md-4">
+                <img
+                  src="https://lfmono2.cdn-nhncommerce.com/data/goods/22/05/21/1000000506/1000000506_detail_048.png"
+                  class="img-fluid rounded-start"
+                  alt="..."
+                />
+              </div>
+              <div class="col-md-8">
+                <h3 class="card-title">수제 타코야끼 1.2kg(30g*40ea)</h3>
+                <hr />
+                <div class="card-body">
+                  <dl class="row">
+                    <dt class="col-1 text-center">1</dt>
+                    <dd class="col-11">
+                      A재료:타코야키파우더,가츠오부시(가다랭이포),타코야끼소스,파래김가루,마요네즈,
+                      쪽파,문어,텐카츠,식용유,타코야끼팬
+                    </dd>
+                    <hr />
+
+                    <dt class="col-sm-1 text-center">2</dt>
+                    <dd class="col-sm-11">
+                      일본식자재파는곳에 가면 저렇게 다꼬파우더와 텐카츠그리고
+                      파래김가루를 팔아요~ 저는 일부러 대용양을 샀어요~ 두고두고
+                      먹으려구요 ㅎㅎㅎ 텐카츠가 없으시면 새우깡이나 감자깡을
+                      부셔서 대체사용가능합니다. 다코파우더가 없다면
+                      가츠오부시와 부침가루를 섞어서 사용하시면 됩니다.
+                    </dd>
+                    <hr />
+
+                    <dt class="col-sm-1 text-center">3</dt>
+                    <dd class="col-sm-11">
+                      그리고 중요한 재료중에 하나! 마요네즈와 타코야키소스를
+                      준비합니다. 그리고 쪽파를 준비해서 얇게 다져서
+                      준비했어요^^
+                    </dd>
+                    <hr />
+
+                    <dt class="col-sm-1 text-center">4</dt>
+                    <dd class="col-sm-11">
+                      그리고 저는 문어를 만질 자신이 없어 손질된 문어를 따로
+                      구매했어요 건문어를 처음에 사용하려 했으나, 건문어를
+                      사용하실분은 4시간이상은 불려야할거 같아요 저는
+                      1시간정도를 불려서 사용해봤는데도 딱딱하더라구요~ 그래서
+                      손질된 생문어를 따로 구매후 살짝 데쳐서 찬물에 헹구어
+                      주었습니다.
+                    </dd>
+                    <hr />
+
+                    <dt class="col-sm-1 text-center">5</dt>
+                    <dd class="col-sm-11">
+                      문어를 데쳤으면 작게 썰어서 준비합니다. 저는 대략적으로
+                      가로세로 1cm정도크기로 썰었어요
+                    </dd>
+                    <hr />
+                    <dt class="col-sm-1 text-center">6</dt>
+                    <dd class="col-sm-11">
+                      타코파우더에 계란을 2개를 넣고 물을 넣은후 섞어주었어요
+                      봉지에 적혀있는 배합은
+                      다코파우더1kg+물3,200ml+계란6개+우유200ml+만능다시100ml
+                      라고 적혀있으니 참고해주세요.
+                    </dd>
+                    <hr />
+                    <dt class="col-sm-1 text-center">7</dt>
+                    <dd class="col-sm-11">
+                      타코야끼팬을 준비합니다. 그리고 팬에 기름을 흥건할정도로
+                      칠해줍니다. 이제 불을켜서 팬을 달궈준뒤 팬이 달아오르면
+                      불을 줄인후 반죽물을 가득안차게 부어줍니다.
+                    </dd>
+                    <hr />
+                    <dt class="col-sm-1 text-center">8</dt>
+                    <dd class="col-sm-11">
+                      반죽물에 문어 쏙쏙! 그리고덴카츠 듬뿍~! 쪽파도 듬뿍듬뿍~!
+                      마무리로 반죽물을 더 가득 부어줍니다.
+                    </dd>
+                    <hr />
+                    <dt class="col-sm-1 text-center">9</dt>
+                    <dd class="col-sm-11">
+                      자, 이제 꼬챙이가 필요할 시기네요! 요 꼬챙이가 없다면
+                      젓가락을 사용하셔도 됩니다. 꼬챙이를 이용해서 둥굴게
+                      안쪽으로 밀면서 해줍니다.
+                    </dd>
+                    <hr />
+                    <dt class="col-sm-1 text-center">10</dt>
+                    <dd class="col-sm-11">
+                      그릇에 타코야끼를 담고, 가츠오부시를 살짝만 뿌려줍니다.
+                      그리고 마요네즈+타코야끼소스를 골고루 뿌려줍니다. 그리고
+                      비쥬얼 이쁜 파래가루를 뿌려준뒤,
+                    </dd>
+                    <hr />
+                    <dt class="col-sm-1 text-center">11</dt>
+                    <dd class="col-sm-11">
+                      가츠오부시를 듬뿍 뿌려주면 타코야끼 만들기 완성입니다.!
+                    </dd>
+                  </dl>
+                </div>
+                <div>
+                  <a href="R_result.html">
+                    <button class="R_btn">상세보기</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr />
+          <!-- ==============================메뉴한칸========================= -->
+          <div class="card mb-3">
+            <div class="row g-5">
+              <div class="col-md-4">
+                <img
+                  src="https://lfmono2.cdn-nhncommerce.com/data/goods/22/05/21/1000000506/1000000506_detail_048.png"
+                  class="img-fluid rounded-start"
+                  alt="..."
+                />
+              </div>
+              <div class="col-md-8">
+                <h3 class="card-title">수제 타코야끼 1.2kg(30g*40ea)</h3>
+                <hr />
+                <div class="card-body">
+                  <dl class="row">
+                    <dt class="col-1 text-center">1</dt>
+                    <dd class="col-11">
+                      A재료:타코야키파우더,가츠오부시(가다랭이포),타코야끼소스,파래김가루,마요네즈,
+                      쪽파,문어,텐카츠,식용유,타코야끼팬
+                    </dd>
+                    <hr />
+
+                    <dt class="col-sm-1 text-center">2</dt>
+                    <dd class="col-sm-11">
+                      일본식자재파는곳에 가면 저렇게 다꼬파우더와 텐카츠그리고
+                      파래김가루를 팔아요~ 저는 일부러 대용양을 샀어요~ 두고두고
+                      먹으려구요 ㅎㅎㅎ 텐카츠가 없으시면 새우깡이나 감자깡을
+                      부셔서 대체사용가능합니다. 다코파우더가 없다면
+                      가츠오부시와 부침가루를 섞어서 사용하시면 됩니다.
+                    </dd>
+                    <hr />
+
+                    <dt class="col-sm-1 text-center">3</dt>
+                    <dd class="col-sm-11">
+                      그리고 중요한 재료중에 하나! 마요네즈와 타코야키소스를
+                      준비합니다. 그리고 쪽파를 준비해서 얇게 다져서
+                      준비했어요^^
+                    </dd>
+                    <hr />
+
+                    <dt class="col-sm-1 text-center">4</dt>
+                    <dd class="col-sm-11">
+                      그리고 저는 문어를 만질 자신이 없어 손질된 문어를 따로
+                      구매했어요 건문어를 처음에 사용하려 했으나, 건문어를
+                      사용하실분은 4시간이상은 불려야할거 같아요 저는
+                      1시간정도를 불려서 사용해봤는데도 딱딱하더라구요~ 그래서
+                      손질된 생문어를 따로 구매후 살짝 데쳐서 찬물에 헹구어
+                      주었습니다.
+                    </dd>
+                    <hr />
+
+                    <dt class="col-sm-1 text-center">5</dt>
+                    <dd class="col-sm-11">
+                      문어를 데쳤으면 작게 썰어서 준비합니다. 저는 대략적으로
+                      가로세로 1cm정도크기로 썰었어요
+                    </dd>
+                    <hr />
+                    <dt class="col-sm-1 text-center">6</dt>
+                    <dd class="col-sm-11">
+                      타코파우더에 계란을 2개를 넣고 물을 넣은후 섞어주었어요
+                      봉지에 적혀있는 배합은
+                      다코파우더1kg+물3,200ml+계란6개+우유200ml+만능다시100ml
+                      라고 적혀있으니 참고해주세요.
+                    </dd>
+                    <hr />
+                    <dt class="col-sm-1 text-center">7</dt>
+                    <dd class="col-sm-11">
+                      타코야끼팬을 준비합니다. 그리고 팬에 기름을 흥건할정도로
+                      칠해줍니다. 이제 불을켜서 팬을 달궈준뒤 팬이 달아오르면
+                      불을 줄인후 반죽물을 가득안차게 부어줍니다.
+                    </dd>
+                    <hr />
+                    <dt class="col-sm-1 text-center">8</dt>
+                    <dd class="col-sm-11">
+                      반죽물에 문어 쏙쏙! 그리고덴카츠 듬뿍~! 쪽파도 듬뿍듬뿍~!
+                      마무리로 반죽물을 더 가득 부어줍니다.
+                    </dd>
+                    <hr />
+                    <dt class="col-sm-1 text-center">9</dt>
+                    <dd class="col-sm-11">
+                      자, 이제 꼬챙이가 필요할 시기네요! 요 꼬챙이가 없다면
+                      젓가락을 사용하셔도 됩니다. 꼬챙이를 이용해서 둥굴게
+                      안쪽으로 밀면서 해줍니다.
+                    </dd>
+                    <hr />
+                    <dt class="col-sm-1 text-center">10</dt>
+                    <dd class="col-sm-11">
+                      그릇에 타코야끼를 담고, 가츠오부시를 살짝만 뿌려줍니다.
+                      그리고 마요네즈+타코야끼소스를 골고루 뿌려줍니다. 그리고
+                      비쥬얼 이쁜 파래가루를 뿌려준뒤,
+                    </dd>
+                    <hr />
+                    <dt class="col-sm-1 text-center">11</dt>
+                    <dd class="col-sm-11">
+                      가츠오부시를 듬뿍 뿌려주면 타코야끼 만들기 완성입니다.!
+                    </dd>
+                  </dl>
+                </div>
+                <div><button class="R_btn">상세보기</button></div>
+              </div>
+            </div>
+          </div>
+          <hr />
+          <!-- ==============================메뉴한칸========================= -->
+          <div class="card mb-3">
+            <div class="row g-5">
+              <div class="col-md-4">
+                <img
+                  src="https://lfmono2.cdn-nhncommerce.com/data/goods/22/05/21/1000000506/1000000506_detail_048.png"
+                  class="img-fluid rounded-start"
+                  alt="..."
+                />
+              </div>
+              <div class="col-md-8">
+                <h3 class="card-title">수제 타코야끼 1.2kg(30g*40ea)</h3>
+                <hr />
+                <div class="card-body">
+                  <dl class="row">
+                    <dt class="col-1 text-center">1</dt>
+                    <dd class="col-11">
+                      A재료:타코야키파우더,가츠오부시(가다랭이포),타코야끼소스,파래김가루,마요네즈,
+                      쪽파,문어,텐카츠,식용유,타코야끼팬
+                    </dd>
+                    <hr />
+
+                    <dt class="col-sm-1 text-center">2</dt>
+                    <dd class="col-sm-11">
+                      일본식자재파는곳에 가면 저렇게 다꼬파우더와 텐카츠그리고
+                      파래김가루를 팔아요~ 저는 일부러 대용양을 샀어요~ 두고두고
+                      먹으려구요 ㅎㅎㅎ 텐카츠가 없으시면 새우깡이나 감자깡을
+                      부셔서 대체사용가능합니다. 다코파우더가 없다면
+                      가츠오부시와 부침가루를 섞어서 사용하시면 됩니다.
+                    </dd>
+                    <hr />
+
+                    <dt class="col-sm-1 text-center">3</dt>
+                    <dd class="col-sm-11">
+                      그리고 중요한 재료중에 하나! 마요네즈와 타코야키소스를
+                      준비합니다. 그리고 쪽파를 준비해서 얇게 다져서
+                      준비했어요^^
+                    </dd>
+                    <hr />
+
+                    <dt class="col-sm-1 text-center">4</dt>
+                    <dd class="col-sm-11">
+                      그리고 저는 문어를 만질 자신이 없어 손질된 문어를 따로
+                      구매했어요 건문어를 처음에 사용하려 했으나, 건문어를
+                      사용하실분은 4시간이상은 불려야할거 같아요 저는
+                      1시간정도를 불려서 사용해봤는데도 딱딱하더라구요~ 그래서
+                      손질된 생문어를 따로 구매후 살짝 데쳐서 찬물에 헹구어
+                      주었습니다.
+                    </dd>
+                    <hr />
+
+                    <dt class="col-sm-1 text-center">5</dt>
+                    <dd class="col-sm-11">
+                      문어를 데쳤으면 작게 썰어서 준비합니다. 저는 대략적으로
+                      가로세로 1cm정도크기로 썰었어요
+                    </dd>
+                    <hr />
+                    <dt class="col-sm-1 text-center">6</dt>
+                    <dd class="col-sm-11">
+                      타코파우더에 계란을 2개를 넣고 물을 넣은후 섞어주었어요
+                      봉지에 적혀있는 배합은
+                      다코파우더1kg+물3,200ml+계란6개+우유200ml+만능다시100ml
+                      라고 적혀있으니 참고해주세요.
+                    </dd>
+                    <hr />
+                    <dt class="col-sm-1 text-center">7</dt>
+                    <dd class="col-sm-11">
+                      타코야끼팬을 준비합니다. 그리고 팬에 기름을 흥건할정도로
+                      칠해줍니다. 이제 불을켜서 팬을 달궈준뒤 팬이 달아오르면
+                      불을 줄인후 반죽물을 가득안차게 부어줍니다.
+                    </dd>
+                    <hr />
+                    <dt class="col-sm-1 text-center">8</dt>
+                    <dd class="col-sm-11">
+                      반죽물에 문어 쏙쏙! 그리고덴카츠 듬뿍~! 쪽파도 듬뿍듬뿍~!
+                      마무리로 반죽물을 더 가득 부어줍니다.
+                    </dd>
+                    <hr />
+                    <dt class="col-sm-1 text-center">9</dt>
+                    <dd class="col-sm-11">
+                      자, 이제 꼬챙이가 필요할 시기네요! 요 꼬챙이가 없다면
+                      젓가락을 사용하셔도 됩니다. 꼬챙이를 이용해서 둥굴게
+                      안쪽으로 밀면서 해줍니다.
+                    </dd>
+                    <hr />
+                    <dt class="col-sm-1 text-center">10</dt>
+                    <dd class="col-sm-11">
+                      그릇에 타코야끼를 담고, 가츠오부시를 살짝만 뿌려줍니다.
+                      그리고 마요네즈+타코야끼소스를 골고루 뿌려줍니다. 그리고
+                      비쥬얼 이쁜 파래가루를 뿌려준뒤,
+                    </dd>
+                    <hr />
+                    <dt class="col-sm-1 text-center">11</dt>
+                    <dd class="col-sm-11">
+                      가츠오부시를 듬뿍 뿌려주면 타코야끼 만들기 완성입니다.!
+                    </dd>
+                  </dl>
+                </div>
+                <div><button class="R_btn">상세보기</button></div>
+              </div>
+            </div>
+          </div>
+          <hr />
+          <!-- ==============================메뉴한칸========================= -->
+          <div class="card mb-3">
+            <div class="row g-5">
+              <div class="col-md-4">
+                <img
+                  src="https://lfmono2.cdn-nhncommerce.com/data/goods/22/05/21/1000000506/1000000506_detail_048.png"
+                  class="img-fluid rounded-start"
+                  alt="..."
+                />
+              </div>
+              <div class="col-md-8">
+                <h3 class="card-title">수제 타코야끼 1.2kg(30g*40ea)</h3>
+                <hr />
+                <div class="card-body">
+                  <dl class="row">
+                    <dt class="col-1 text-center">1</dt>
+                    <dd class="col-11">
+                      A재료:타코야키파우더,가츠오부시(가다랭이포),타코야끼소스,파래김가루,마요네즈,
+                      쪽파,문어,텐카츠,식용유,타코야끼팬
+                    </dd>
+                    <hr />
+
+                    <dt class="col-sm-1 text-center">2</dt>
+                    <dd class="col-sm-11">
+                      일본식자재파는곳에 가면 저렇게 다꼬파우더와 텐카츠그리고
+                      파래김가루를 팔아요~ 저는 일부러 대용양을 샀어요~ 두고두고
+                      먹으려구요 ㅎㅎㅎ 텐카츠가 없으시면 새우깡이나 감자깡을
+                      부셔서 대체사용가능합니다. 다코파우더가 없다면
+                      가츠오부시와 부침가루를 섞어서 사용하시면 됩니다.
+                    </dd>
+                    <hr />
+
+                    <dt class="col-sm-1 text-center">3</dt>
+                    <dd class="col-sm-11">
+                      그리고 중요한 재료중에 하나! 마요네즈와 타코야키소스를
+                      준비합니다. 그리고 쪽파를 준비해서 얇게 다져서
+                      준비했어요^^
+                    </dd>
+                    <hr />
+
+                    <dt class="col-sm-1 text-center">4</dt>
+                    <dd class="col-sm-11">
+                      그리고 저는 문어를 만질 자신이 없어 손질된 문어를 따로
+                      구매했어요 건문어를 처음에 사용하려 했으나, 건문어를
+                      사용하실분은 4시간이상은 불려야할거 같아요 저는
+                      1시간정도를 불려서 사용해봤는데도 딱딱하더라구요~ 그래서
+                      손질된 생문어를 따로 구매후 살짝 데쳐서 찬물에 헹구어
+                      주었습니다.
+                    </dd>
+                    <hr />
+
+                    <dt class="col-sm-1 text-center">5</dt>
+                    <dd class="col-sm-11">
+                      문어를 데쳤으면 작게 썰어서 준비합니다. 저는 대략적으로
+                      가로세로 1cm정도크기로 썰었어요
+                    </dd>
+                    <hr />
+                    <dt class="col-sm-1 text-center">6</dt>
+                    <dd class="col-sm-11">
+                      타코파우더에 계란을 2개를 넣고 물을 넣은후 섞어주었어요
+                      봉지에 적혀있는 배합은
+                      다코파우더1kg+물3,200ml+계란6개+우유200ml+만능다시100ml
+                      라고 적혀있으니 참고해주세요.
+                    </dd>
+                    <hr />
+                    <dt class="col-sm-1 text-center">7</dt>
+                    <dd class="col-sm-11">
+                      타코야끼팬을 준비합니다. 그리고 팬에 기름을 흥건할정도로
+                      칠해줍니다. 이제 불을켜서 팬을 달궈준뒤 팬이 달아오르면
+                      불을 줄인후 반죽물을 가득안차게 부어줍니다.
+                    </dd>
+                    <hr />
+                    <dt class="col-sm-1 text-center">8</dt>
+                    <dd class="col-sm-11">
+                      반죽물에 문어 쏙쏙! 그리고덴카츠 듬뿍~! 쪽파도 듬뿍듬뿍~!
+                      마무리로 반죽물을 더 가득 부어줍니다.
+                    </dd>
+                    <hr />
+                    <dt class="col-sm-1 text-center">9</dt>
+                    <dd class="col-sm-11">
+                      자, 이제 꼬챙이가 필요할 시기네요! 요 꼬챙이가 없다면
+                      젓가락을 사용하셔도 됩니다. 꼬챙이를 이용해서 둥굴게
+                      안쪽으로 밀면서 해줍니다.
+                    </dd>
+                    <hr />
+                    <dt class="col-sm-1 text-center">10</dt>
+                    <dd class="col-sm-11">
+                      그릇에 타코야끼를 담고, 가츠오부시를 살짝만 뿌려줍니다.
+                      그리고 마요네즈+타코야끼소스를 골고루 뿌려줍니다. 그리고
+                      비쥬얼 이쁜 파래가루를 뿌려준뒤,
+                    </dd>
+                    <hr />
+                    <dt class="col-sm-1 text-center">11</dt>
+                    <dd class="col-sm-11">
+                      가츠오부시를 듬뿍 뿌려주면 타코야끼 만들기 완성입니다.!
+                    </dd>
+                  </dl>
+                </div>
+                <div><button class="R_btn">상세보기</button></div>
+              </div>
+            </div>
+          </div>
+          <hr />
+          <!-- ==============================메뉴한칸========================= -->
+          <div class="card mb-3">
+            <div class="row g-5">
+              <div class="col-md-4">
+                <img
+                  src="https://lfmono2.cdn-nhncommerce.com/data/goods/22/05/21/1000000506/1000000506_detail_048.png"
+                  class="img-fluid rounded-start"
+                  alt="..."
+                />
+              </div>
+              <div class="col-md-8">
+                <h3 class="card-title">수제 타코야끼 1.2kg(30g*40ea)</h3>
+                <hr />
+                <div class="card-body">
+                  <dl class="row">
+                    <dt class="col-1 text-center">1</dt>
+                    <dd class="col-11">
+                      A재료:타코야키파우더,가츠오부시(가다랭이포),타코야끼소스,파래김가루,마요네즈,
+                      쪽파,문어,텐카츠,식용유,타코야끼팬
+                    </dd>
+                    <hr />
+
+                    <dt class="col-sm-1 text-center">2</dt>
+                    <dd class="col-sm-11">
+                      일본식자재파는곳에 가면 저렇게 다꼬파우더와 텐카츠그리고
+                      파래김가루를 팔아요~ 저는 일부러 대용양을 샀어요~ 두고두고
+                      먹으려구요 ㅎㅎㅎ 텐카츠가 없으시면 새우깡이나 감자깡을
+                      부셔서 대체사용가능합니다. 다코파우더가 없다면
+                      가츠오부시와 부침가루를 섞어서 사용하시면 됩니다.
+                    </dd>
+                    <hr />
+
+                    <dt class="col-sm-1 text-center">3</dt>
+                    <dd class="col-sm-11">
+                      그리고 중요한 재료중에 하나! 마요네즈와 타코야키소스를
+                      준비합니다. 그리고 쪽파를 준비해서 얇게 다져서
+                      준비했어요^^
+                    </dd>
+                    <hr />
+
+                    <dt class="col-sm-1 text-center">4</dt>
+                    <dd class="col-sm-11">
+                      그리고 저는 문어를 만질 자신이 없어 손질된 문어를 따로
+                      구매했어요 건문어를 처음에 사용하려 했으나, 건문어를
+                      사용하실분은 4시간이상은 불려야할거 같아요 저는
+                      1시간정도를 불려서 사용해봤는데도 딱딱하더라구요~ 그래서
+                      손질된 생문어를 따로 구매후 살짝 데쳐서 찬물에 헹구어
+                      주었습니다.
+                    </dd>
+                    <hr />
+
+                    <dt class="col-sm-1 text-center">5</dt>
+                    <dd class="col-sm-11">
+                      문어를 데쳤으면 작게 썰어서 준비합니다. 저는 대략적으로
+                      가로세로 1cm정도크기로 썰었어요
+                    </dd>
+                    <hr />
+                    <dt class="col-sm-1 text-center">6</dt>
+                    <dd class="col-sm-11">
+                      타코파우더에 계란을 2개를 넣고 물을 넣은후 섞어주었어요
+                      봉지에 적혀있는 배합은
+                      다코파우더1kg+물3,200ml+계란6개+우유200ml+만능다시100ml
+                      라고 적혀있으니 참고해주세요.
+                    </dd>
+                    <hr />
+                    <dt class="col-sm-1 text-center">7</dt>
+                    <dd class="col-sm-11">
+                      타코야끼팬을 준비합니다. 그리고 팬에 기름을 흥건할정도로
+                      칠해줍니다. 이제 불을켜서 팬을 달궈준뒤 팬이 달아오르면
+                      불을 줄인후 반죽물을 가득안차게 부어줍니다.
+                    </dd>
+                    <hr />
+                    <dt class="col-sm-1 text-center">8</dt>
+                    <dd class="col-sm-11">
+                      반죽물에 문어 쏙쏙! 그리고덴카츠 듬뿍~! 쪽파도 듬뿍듬뿍~!
+                      마무리로 반죽물을 더 가득 부어줍니다.
+                    </dd>
+                    <hr />
+                    <dt class="col-sm-1 text-center">9</dt>
+                    <dd class="col-sm-11">
+                      자, 이제 꼬챙이가 필요할 시기네요! 요 꼬챙이가 없다면
+                      젓가락을 사용하셔도 됩니다. 꼬챙이를 이용해서 둥굴게
+                      안쪽으로 밀면서 해줍니다.
+                    </dd>
+                    <hr />
+                    <dt class="col-sm-1 text-center">10</dt>
+                    <dd class="col-sm-11">
+                      그릇에 타코야끼를 담고, 가츠오부시를 살짝만 뿌려줍니다.
+                      그리고 마요네즈+타코야끼소스를 골고루 뿌려줍니다. 그리고
+                      비쥬얼 이쁜 파래가루를 뿌려준뒤,
+                    </dd>
+                    <hr />
+                    <dt class="col-sm-1 text-center">11</dt>
+                    <dd class="col-sm-11">
+                      가츠오부시를 듬뿍 뿌려주면 타코야끼 만들기 완성입니다.!
+                    </dd>
+                  </dl>
+                </div>
+                <div><button class="R_btn">상세보기</button></div>
+              </div>
+            </div>
+          </div>
+          <hr />
+          <!-- ==============================메뉴한칸========================= -->
+          <div class="card mb-3">
+            <div class="row g-5">
+              <div class="col-md-4">
+                <img
+                  src="https://lfmono2.cdn-nhncommerce.com/data/goods/22/05/21/1000000506/1000000506_detail_048.png"
+                  class="img-fluid rounded-start"
+                  alt="..."
+                />
+              </div>
+              <div class="col-md-8">
+                <h3 class="card-title">수제 타코야끼 1.2kg(30g*40ea)</h3>
+                <hr />
+                <div class="card-body">
+                  <dl class="row">
+                    <dt class="col-1 text-center">1</dt>
+                    <dd class="col-11">
+                      A재료:타코야키파우더,가츠오부시(가다랭이포),타코야끼소스,파래김가루,마요네즈,
+                      쪽파,문어,텐카츠,식용유,타코야끼팬
+                    </dd>
+                    <hr />
+
+                    <dt class="col-sm-1 text-center">2</dt>
+                    <dd class="col-sm-11">
+                      일본식자재파는곳에 가면 저렇게 다꼬파우더와 텐카츠그리고
+                      파래김가루를 팔아요~ 저는 일부러 대용양을 샀어요~ 두고두고
+                      먹으려구요 ㅎㅎㅎ 텐카츠가 없으시면 새우깡이나 감자깡을
+                      부셔서 대체사용가능합니다. 다코파우더가 없다면
+                      가츠오부시와 부침가루를 섞어서 사용하시면 됩니다.
+                    </dd>
+                    <hr />
+
+                    <dt class="col-sm-1 text-center">3</dt>
+                    <dd class="col-sm-11">
+                      그리고 중요한 재료중에 하나! 마요네즈와 타코야키소스를
+                      준비합니다. 그리고 쪽파를 준비해서 얇게 다져서
+                      준비했어요^^
+                    </dd>
+                    <hr />
+
+                    <dt class="col-sm-1 text-center">4</dt>
+                    <dd class="col-sm-11">
+                      그리고 저는 문어를 만질 자신이 없어 손질된 문어를 따로
+                      구매했어요 건문어를 처음에 사용하려 했으나, 건문어를
+                      사용하실분은 4시간이상은 불려야할거 같아요 저는
+                      1시간정도를 불려서 사용해봤는데도 딱딱하더라구요~ 그래서
+                      손질된 생문어를 따로 구매후 살짝 데쳐서 찬물에 헹구어
+                      주었습니다.
+                    </dd>
+                    <hr />
+
+                    <dt class="col-sm-1 text-center">5</dt>
+                    <dd class="col-sm-11">
+                      문어를 데쳤으면 작게 썰어서 준비합니다. 저는 대략적으로
+                      가로세로 1cm정도크기로 썰었어요
+                    </dd>
+                    <hr />
+                    <dt class="col-sm-1 text-center">6</dt>
+                    <dd class="col-sm-11">
+                      타코파우더에 계란을 2개를 넣고 물을 넣은후 섞어주었어요
+                      봉지에 적혀있는 배합은
+                      다코파우더1kg+물3,200ml+계란6개+우유200ml+만능다시100ml
+                      라고 적혀있으니 참고해주세요.
+                    </dd>
+                    <hr />
+                    <dt class="col-sm-1 text-center">7</dt>
+                    <dd class="col-sm-11">
+                      타코야끼팬을 준비합니다. 그리고 팬에 기름을 흥건할정도로
+                      칠해줍니다. 이제 불을켜서 팬을 달궈준뒤 팬이 달아오르면
+                      불을 줄인후 반죽물을 가득안차게 부어줍니다.
+                    </dd>
+                    <hr />
+                    <dt class="col-sm-1 text-center">8</dt>
+                    <dd class="col-sm-11">
+                      반죽물에 문어 쏙쏙! 그리고덴카츠 듬뿍~! 쪽파도 듬뿍듬뿍~!
+                      마무리로 반죽물을 더 가득 부어줍니다.
+                    </dd>
+                    <hr />
+                    <dt class="col-sm-1 text-center">9</dt>
+                    <dd class="col-sm-11">
+                      자, 이제 꼬챙이가 필요할 시기네요! 요 꼬챙이가 없다면
+                      젓가락을 사용하셔도 됩니다. 꼬챙이를 이용해서 둥굴게
+                      안쪽으로 밀면서 해줍니다.
+                    </dd>
+                    <hr />
+                    <dt class="col-sm-1 text-center">10</dt>
+                    <dd class="col-sm-11">
+                      그릇에 타코야끼를 담고, 가츠오부시를 살짝만 뿌려줍니다.
+                      그리고 마요네즈+타코야끼소스를 골고루 뿌려줍니다. 그리고
+                      비쥬얼 이쁜 파래가루를 뿌려준뒤,
+                    </dd>
+                    <hr />
+                    <dt class="col-sm-1 text-center">11</dt>
+                    <dd class="col-sm-11">
+                      가츠오부시를 듬뿍 뿌려주면 타코야끼 만들기 완성입니다.!
+                    </dd>
+                  </dl>
+                </div>
+                <div><button class="R_btn">상세보기</button></div>
+              </div>
+            </div>
+          </div>
+          <hr />
+          <!-- ==============================메뉴한칸========================= -->
+        </div>
+      </div>
+    </div>
+    <script>
+      $(document).ready(function () {
+        $(".card-body").each(function () {
+          var text = $(this).text();
+          if (text.length > 500) {
+            $(this).text(text.substring(0, 500) + "...");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
