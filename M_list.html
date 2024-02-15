@@ -32,6 +32,10 @@
       position: relative;
       height: 100%;
     }
+    .row {
+      padding: 0;
+      margin: 0;
+    }
     a {
       cursor: pointer;
     }
@@ -49,20 +53,62 @@
       color: #f67676;
       font-weight: bold;
     }
+    .container {
+      display: flex;
+      justify-content: center;
+    }
+    .M_trailer {
+      width: 80%;
+      border: 1px solid rgb(219, 219, 219);
+      margin: 50px 0 100px 0;
+      border-radius: 10px;
+    }
+    .M_trailer iframe {
+      border-radius: 10px;
+    }
+
+    .M_trailer_text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    .M_trailer_text h2 {
+      font-size: 25px;
+    }
+    .M_trailer_btn {
+      width: 150px;
+      height: 40px;
+      border: none;
+      border-radius: 10px;
+      background-color: #f67676;
+      color: white;
+      font-weight: bold;
+    }
 
     /* ====================스위퍼================= */
-    .swp_title {
+    .swp_title:nth-child(1) {
       margin-top: 80px;
     }
+    .swp_title:nth-child(2) {
+      margin-top: 3%;
+    }
+    .swp_title {
+      padding-top: 10px;
+      background-color: #f8f9fa;
+    }
     .swp_title h3 {
-      margin-left: 15%;
+      width: 80%;
+      margin-left: 10%;
       font-size: 25px;
       font-weight: bold;
     }
     .swiper {
-      width: 70%;
+      width: 80%;
       height: auto;
       min-width: 280px;
+      padding: 10px;
     }
 
     .swiper-slide {
@@ -73,6 +119,11 @@
       justify-content: center;
       align-items: center;
       flex-direction: column;
+      border-radius: 10px;
+    }
+    .swiper-slide:hover {
+      border: 1px solid rgb(199, 199, 199);
+      box-shadow: 5px 5px rgb(214, 213, 213);
     }
 
     .swiper-slide img {
@@ -81,6 +132,7 @@
       height: 300px auto;
       object-fit: contain;
       min-width: 100px;
+      border-radius: 10px;
     }
 
     .swiper {
@@ -95,10 +147,10 @@
     .m_text {
       width: 100%;
       line-height: 20px;
-      margin-top: 10px;
+      padding: 10px;
     }
     .m_title {
-      font-size: 20px;
+      font-size: 18px;
       font-weight: bold;
     }
     .m_year {
@@ -119,6 +171,7 @@
       color: white;
       font-weight: bold;
       opacity: 0.8;
+      border-radius: 10px 0 0 0;
     }
 
     @media screen and (max-width: 1050px) {
@@ -127,6 +180,9 @@
       }
       .swp_title h3 {
         margin-left: 2.5%;
+      }
+      .M_trailer {
+        width: 95%;
       }
     }
   </style>
@@ -194,7 +250,7 @@
 
     <div class="row swp">
       <div class="col swp_title">
-        <h3>박스오피스 순위</h3>
+        <h3>키워드 추천 영화</h3>
         <!-- Swiper -->
         <div class="swiper mySwiper">
           <div class="swiper-wrapper">
@@ -334,7 +390,7 @@
         </div>
       </div>
       <div class="col swp_title">
-        <h3>키워드 추천 영화</h3>
+        <h3>박스오피스 순위</h3>
         <!-- Swiper -->
         <div class="swiper mySwiper">
           <div class="swiper-wrapper">
@@ -469,6 +525,31 @@
           </div>
           <div class="swiper-button-next"></div>
           <div class="swiper-button-prev"></div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row M_trailer">
+          <div class="col-md-6 col-12 p-0">
+            <div class="ratio ratio-16x9">
+              <iframe
+                src="https://www.youtube.com/embed/rjW9E1BR_30"
+                title="험한 것이 나왔다🔍 [파묘] 1차 예고편"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+          <div class="col-md-6 col-12 p-0 M_trailer_text">
+            <h2>[파묘] 1차 예고편</h2>
+            <p>
+              <검은 사제들>, <사바하>, 그리고 신작. <br />장재현 신작은 항상
+              기다려진다.
+              <br />
+              2월 22일 개봉.
+            </p>
+            <button class="M_trailer_btn">상세보기</button>
+          </div>
         </div>
       </div>
     </div>
