@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>먹거리 리스트</title>
+    <!-- ===============부트스트랩================ -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"
+    ></script>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Insert title here</title>
+  </head>
+
+  <body>
+    <div layout:fragment="content" class="content content1">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <h1 class="display-6">페이지 타이틀 display-6</h1>
+            <hr />
+            <p>
+              페이지 타이틀과 본문 사이에 <code>&lt;hr /&gt;</code> 태그를 넣어
+              분리합니다.
+            </p>
+            <p>
+              본문은 클래스 없이 일반 <code>&lt;p&gt;</code> 태그를 사용합니다.
+            </p>
+            <p>
+              본문 내 단락을 구분 할 때에는 <code>&lt;p&gt;</code> 태그를
+              추가합니다. 저는 본문 내용이에요 로렘입숨 Lorem ipsum dolor sit
+              amet consectetur adipisicing elit. Repellat aliquid eum, quasi
+              amet dolores necessitatibus vero illum culpa libero debitis.
+            </p>
+            <p class="text-muted small">
+              부가설명이 필요한 부분엔 calss="text-muted small" 을 사용합니다.
+            </p>
+            <p><b>강조 표시는 일반 b 태그를 사용합니다.</b></p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div class="border border-secondary">
+              테두리 기본은 class="border border-secondary" 를 사용합니다.
+            </div>
+            <div class="border border-secondary rounded">
+              모서리 기본은 class="rounded" 를 사용합니다.
+            </div>
+            <div class="border border-secondary rounded p-2">
+              패딩 기본은 class="p-2" 를 사용합니다.
+            </div>
+            <div class="row">
+              <div class="col-12">
+                <div class="border border-secondary rounded p-2 mb-2">
+                  마진 기본은 class="mb-2" 를 사용합니다. col 끼리는 좌우 간격
+                  자동 조정 됩니다.
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="border border-secondary rounded p-2 mb-2">
+                  마진 기본은 class="mb-2" 를 사용합니다.
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="border border-secondary rounded p-2 mb-2">
+                  마진 기본은 class="mb-2" 를 사용합니다.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <p>이미지에는 class="img-fluid w-100" 를 사용합니다.</p>
+            <img
+              src="https://suwon.greenart.co.kr/upimage/new_campus/20220406163123[3].jpg"
+              class="img-fluid w-100"
+            />
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <p>기존 색상세트는 다음과 같습니다.</p>
+            <p class="bg-primary">primary: #0d6efd;</p>
+            <p class="bg-secondary">secondary: #6c757d;</p>
+            <!-- <p class="bg-success">success: #198754;</p>
+                  <p class="bg-info">info: #0dcaf0;</p>
+                  <p class="bg-warning">warning: #ffc107;</p>
+                  <p class="bg-danger">danger: #dc3545;</p> -->
+            <p class="bg-light">light: #f8f9fa;</p>
+            <p class="bg-dark text-white">dark: #212529;</p>
+          </div>
+          <div class="col">
+            <style>
+              .cg-primary {
+                background-color: #f74747;
+              }
+              .cg-secondary {
+                background-color: #a4aaa7;
+              }
+              .cg-success {
+                background-color: #16aa52;
+              }
+              .cg-info {
+                background-color: #5ac6d0;
+              }
+              .cg-warning {
+                background-color: #ffd700;
+              }
+              .cg-danger {
+                background-color: #ff4444;
+              }
+              .cg-light {
+                background-color: #f0f2f4;
+              }
+              .cg-dark {
+                background-color: #1d1e23;
+              }
+            </style>
+            <p>츄겟 색상세트는 다음과 같습니다.</p>
+            <p class="cg-primary">primary: #f74747; 홍색</p>
+            <p class="cg-secondary">secondary: #a4aaa7; 회색</p>
+            <!-- <p class="cg-success">success: #16aa52; 명록색</p>
+                  <p class="cg-info">info: #5ac6d0; 천청색</p>
+                  <p class="cg-warning">warning: #ffd700; 금색</p>
+                  <p class="cg-danger">danger: #ff4444; 적홍색</p> -->
+            <p class="cg-light">light: #f0f2f4; 설백색</p>
+            <p class="cg-dark text-white">dark: #1d1e23; 흑색</p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12">
+            <p>버튼 세트는 다음과 같습니다. hover 시 스타일은 수정 예정</p>
+          </div>
+          <div class="col-12">
+            <div class="row">
+              <div class="col-12 col-sm-3">
+                <button class="btn btn-sm cg-primary text-white">
+                  메인 버튼, 등록 버튼, 등..
+                </button>
+              </div>
+              <div class="col-12 col-sm-3">
+                <button class="btn btn-sm cg-light">보조 버튼..</button>
+              </div>
+              <div class="col-12 col-sm-3">
+                <button class="btn btn-sm cg-secondary">
+                  취소 버튼, 이전 버튼 등
+                </button>
+              </div>
+              <div class="col-12 col-sm-3">
+                <button class="btn btn-sm cg-dark text-white">
+                  수정 버튼, 삭제 버튼
+                </button>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12">
+                <style>
+                  .btn-keyword {
+                    background-color: #fcfcfc;
+                    border: solid 1px #c8c8c8;
+                    color: #666666;
+                    border-radius: 0.825rem;
+                    padding: 0.25rem 0.5rem;
+                    cursor: default;
+                    margin-bottom: 0.25rem;
+                    display: inline-flex;
+                  }
+
+                  .cg-active {
+                    background-color: #f74747;
+                    border: none;
+                    color: #fcfcfc;
+                  }
+
+                  .cg-active:hover {
+                    background-color: #f74747;
+                    border: none;
+                    color: #fcfcfc;
+                  }
+
+                  .border-light {
+                    border: solid 1px #f0f2f4 !important;
+                  }
+                </style>
+                키워드용 버튼은 추가로 btn-keyword 를 만들었습니다.<br />
+                <button class="btn btn-sm btn-keyword">Keyword</button>
+                <button class="btn btn-sm btn-keyword cg-active">
+                  Keyword active
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <style>
+          ::-webkit-scrollbar {
+            width: 5px;
+            height: 5px;
+          }
+          ::-webkit-scrollbar-thumb {
+            background-color: #ccc;
+          }
+          ::-webkit-scrollbar-track {
+            background-color: #f7f7f7;
+          }
+        </style>
+
+        <div class="row">
+          <h5 class="card-title">모바일 2개 카드 방식</h5>
+          <div class="col-6 col-md-6 col-lg-4 col-xl-3 mb-2">
+            <div class="card border border-light">
+              <img
+                src="https://recipe1.ezmember.co.kr/cache/recipe/2015/05/28/fb15281c82b14b6ab9c937eb48730b2b1.jpg"
+                class="card-img-top"
+                alt="..."
+                style="height: 13rem; object-fit: cover"
+              />
+              <div class="card-body">
+                <h5 class="card-title">돼지고기 김치찌개</h5>
+                <p
+                  class="card-text text-muted small text-nowrap overflow-x-auto"
+                >
+                  <span class="btn-keyword">한식</span>
+                  <span class="btn-keyword">매운거</span>
+                  <span class="btn-keyword">국물</span>
+                  <span class="btn-keyword">고기</span>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-6 col-lg-4 col-xl-3 mb-2">
+            <div class="card border border-light">
+              <img
+                src="https://img.danawa.com/prod_img/500000/489/124/img/4124489_1.jpg?_v=20180124114437"
+                class="card-img-top"
+                alt="..."
+                style="height: 13rem; object-fit: cover"
+              />
+              <div class="card-body">
+                <h5 class="card-title">묵은지 김치찌개</h5>
+                <p
+                  class="card-text text-muted small text-nowrap overflow-x-auto"
+                >
+                  <span class="btn-keyword">한식</span>
+                  <span class="btn-keyword">매운거</span>
+                  <span class="btn-keyword">국물</span>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <h5 class="card-title">모바일 1개 카드 형식</h5>
+          <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-2">
+            <div class="card border border-light">
+              <img
+                src="https://recipe1.ezmember.co.kr/cache/recipe/2015/05/28/fb15281c82b14b6ab9c937eb48730b2b1.jpg"
+                class="card-img-top"
+                alt="..."
+                style="height: 13rem; object-fit: cover"
+              />
+              <div class="card-body">
+                <h5 class="card-title">돼지고기 김치찌개</h5>
+                <p
+                  class="card-text text-muted small text-nowrap overflow-x-auto"
+                >
+                  <span class="btn-keyword">한식</span>
+                  <span class="btn-keyword">매운거</span>
+                  <span class="btn-keyword">국물</span>
+                  <span class="btn-keyword">고기</span>
+                  <span class="btn-keyword">한식</span>
+                  <span class="btn-keyword">매운거</span>
+                  <span class="btn-keyword">국물</span>
+                  <span class="btn-keyword">고기</span>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-2">
+            <div class="card border border-light">
+              <img
+                src="https://img.danawa.com/prod_img/500000/489/124/img/4124489_1.jpg?_v=20180124114437"
+                class="card-img-top"
+                alt="..."
+                style="height: 13rem; object-fit: cover"
+              />
+              <div class="card-body">
+                <h5 class="card-title">묵은지 김치찌개</h5>
+                <p
+                  class="card-text text-muted small text-nowrap overflow-x-auto"
+                >
+                  <span class="btn-keyword">한식</span>
+                  <span class="btn-keyword">매운거</span>
+                  <span class="btn-keyword">국물</span>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <h5 class="card-title">모바일 1개 리스트 형식</h5>
+          <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-2">
+            <div class="card border border-light">
+              <img
+                src="https://recipe1.ezmember.co.kr/cache/recipe/2015/05/28/fb15281c82b14b6ab9c937eb48730b2b1.jpg"
+                class="card-img-top"
+                alt="..."
+                style="height: 13rem; object-fit: cover"
+              />
+              <div class="card-body">
+                <h5 class="card-title">돼지고기 김치찌개</h5>
+                <p
+                  class="card-text text-muted small text-nowrap overflow-x-auto"
+                >
+                  <span class="btn-keyword">한식</span>
+                  <span class="btn-keyword">매운거</span>
+                  <span class="btn-keyword">국물</span>
+                  <span class="btn-keyword">고기</span>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-2">
+            <div class="card border border-light">
+              <img
+                src="https://img.danawa.com/prod_img/500000/489/124/img/4124489_1.jpg?_v=20180124114437"
+                class="card-img-top"
+                alt="..."
+                style="height: 13rem; object-fit: cover"
+              />
+              <div class="card-body">
+                <h5 class="card-title">묵은지 김치찌개</h5>
+                <p
+                  class="card-text text-muted small text-nowrap overflow-x-auto"
+                >
+                  <span class="btn-keyword">한식</span>
+                  <span class="btn-keyword">매운거</span>
+                  <span class="btn-keyword">국물</span>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-6 col-lg-4 col-xl-3 mb-2">
+            <div class="card border border-light">
+              <img
+                src="https://thumbnail9.coupangcdn.com/thumbnails/remote/230x230ex/image/retail/images/7477013655676908-953a56c7-c264-4999-8f3c-eb8762c3aa87.jpg"
+                class="card-img-top"
+                alt="..."
+                style="height: 13rem; object-fit: cover"
+              />
+              <div class="card-body">
+                <h5 class="card-title">대파</h5>
+                <p class="card-text fw-bold">
+                  <span class="text-danger">10%</span>
+                  <span>3,600원</span><br />
+                  <span class="text-muted small"><del>4,000원</del></span>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-6 col-md-6 col-lg-4 col-xl-3 mb-2 d-flex align-items-stretch"
+          >
+            <div class="card border border-light">
+              <img
+                src="https://thumbnail9.coupangcdn.com/thumbnails/remote/230x230ex/image/retail/images/7477013655676908-953a56c7-c264-4999-8f3c-eb8762c3aa87.jpg"
+                class="card-img-top"
+                alt="..."
+                style="height: 13rem; object-fit: cover"
+              />
+              <div class="card-body">
+                <h5 class="card-title">p_name</h5>
+                <p class="card-text text-muted small">p_description</p>
+                <p class="fw-bold">
+                  <!-- <span class="text-danger">10%</span> -->
+                  <span>p_price - (p_price * (p_dc_percent / 100))</span><br />
+                  <!-- <span class="text-muted small"><del>p_price</del></span> -->
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col text-center">더보기</div>
+        </div>
+      </div>
+
+      <div class="container-fluid">
+        <div class="row">
+          <!-- <h1 th:if="${session.ss_u_seq != null}" th:text="${session.ss_u_seq}">session</h1> -->
+
+          <div id="map" style="width: 500px; height: 400px"></div>
+          <script
+            type="text/javascript"
+            src="//dapi.kakao.com/v2/maps/sdk.js?appkey=bde73c8b89de54b9a43958dc56ce6bc2"
+          ></script>
+          <script>
+            var container = document.getElementById("map"); //지도를 담을 영역의 DOM 레퍼런스
+            var options = {
+              //지도를 생성할 때 필요한 기본 옵션
+              center: new kakao.maps.LatLng(33.450701, 126.570667), //지도의 중심좌표.
+              level: 3, //지도의 레벨(확대, 축소 정도)
+            };
+
+            // var map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
+          </script>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
