@@ -16,6 +16,11 @@
       integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
       crossorigin="anonymous"
     ></script>
+    <!-- ==================아이콘======================= -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
 
     <!-- ===============캐로셀================ -->
     <link
@@ -25,6 +30,10 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   </head>
   <style>
+    .material-symbols-outlined {
+      font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -35,11 +44,10 @@
     body {
       position: relative;
       height: 100%;
-      background-color: #f1f1f2;
+      background-color: white;
+      overflow-x: hidden;
     }
-    .container {
-      width: 80%;
-    }
+
     /* =======네브바======== */
     .navbar {
       position: fixed;
@@ -57,7 +65,8 @@
     }
 
     /* =======포스터======== */
-    .M_row {
+    .M_row,
+    .swp {
       position: relative;
       top: 100px;
     }
@@ -68,13 +77,16 @@
       width: 100%;
       top: auto;
       min-width: 200px;
+      margin-bottom: 30px;
+      padding: 10px;
+      border-radius: 20px;
     }
 
     /* ==============콘텐츠 */
 
     .maintext {
       line-height: 15px;
-      padding: 5px;
+      padding: 10px;
     }
     .maintext h1 {
       font-size: 30px;
@@ -94,7 +106,48 @@
       font-weight: bold;
       margin-bottom: 30px;
     }
+    .list-group {
+      border-top: 1px solid #d1d0d0;
+    }
+    .list-group-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .P_name {
+      font-weight: bold;
+    }
+    .cart {
+      font-size: 20px;
+      background-color: #f74b4b;
+      color: white;
+      border: none;
+      width: 35px;
+      height: 35px;
+      border-radius: 10px;
+    }
+
+    .R_count {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .R_category {
+      border: 1px solid lightgray;
+      padding: 5px;
+      border-radius: 10px;
+      margin: 2px 2px;
+      display: inline-block;
+    }
+
     @media screen and (max-width: 700px) {
+      .R_count {
+        justify-content: flex-start;
+      }
+      .M_poster img {
+        padding: 0;
+      }
     }
 
     /* ====================스위퍼================= */
@@ -104,8 +157,6 @@
     }
     .swiper {
       width: 100%;
-      height: auto;
-      min-width: 280px;
     }
 
     .swiper-slide {
@@ -120,16 +171,21 @@
 
     .swiper-slide img {
       display: block;
-      width: 100%;
       height: auto;
-      object-fit: contain;
-      min-width: 100px;
+      width: 100%;
+      object-fit: cover;
+      aspect-ratio: 4 / 3;
     }
 
     .swiper-button-next,
     .swiper-button-prev {
       color: lightgray;
     }
+    .card-title {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
     @media screen and (max-width: 1050px) {
       .swiper {
         width: 100%;
@@ -137,8 +193,22 @@
       .swp_title h3 {
         margin-left: 2.5%;
       }
+      .swiper-slide img {
+        min-height: 10px;
+      }
+      .card {
+        min-height: auto;
+      }
+      .card-title {
+        font-size: 16px;
+      }
+      .card-text,
+      .see-more {
+        font-size: 10px;
+        margin: 0;
+      }
     }
-
+    /* ================================================ */
     .m_text {
       width: 100%;
       line-height: 20px;
@@ -166,6 +236,7 @@
       color: white;
       font-weight: bold;
       opacity: 0.8;
+      z-index: 90;
     }
     /* ==========================스위퍼 끝========================== */
   </style>
@@ -235,36 +306,116 @@
       <div class="row M_row">
         <h1 class="Maintit">당신의 취향에 맞는 먹거리를 추천!</h1>
         <hr />
-        <div class="col-md-3 col-12 M_poster">
+        <div class="col-lg-5 col-12 M_poster">
           <img
-            src="https://lfmono2.cdn-nhncommerce.com/data/goods/22/05/21/1000000506/1000000506_detail_048.png"
+            src="https://recipe1.ezmember.co.kr/cache/recipe/2015/08/25/a01d013a6b6f9d526c43f4659db2cd61.jpg"
             alt=""
           />
         </div>
-        <div class="col-md-9 col-12 M_content">
+        <div class="col-lg-7 col-12 M_content">
           <div class="row">
             <div class="col-12 maintext">
               <div class="row">
-                <h1 class="R_title">수제 타코야끼 1.2kg(30g*40ea)</h1>
+                <h1 class="R_title">돼지고기 김치찌개</h1>
                 <hr />
                 <h3 class="R_title">재료(Ingredients)</h3>
 
-                <div class="col-6">
+                <div class="col-lg-6 col-12">
                   <ul class="list-group list-group-flush">
-                    <li class="list-group-item">An item</li>
-                    <li class="list-group-item">A second item</li>
-                    <li class="list-group-item">A third item</li>
-                    <li class="list-group-item">A fourth item</li>
-                    <li class="list-group-item">And a fifth one</li>
+                    <li class="list-group-item">
+                      <span class="P_name">돼지고기 목살</span>
+                      <span class="F_VOLUME_ARR">250g</span>
+                      <button class="cart border border-0">
+                        <span class="material-symbols-outlined">
+                          shopping_cart
+                        </span>
+                      </button>
+                    </li>
+                    <li class="list-group-item">
+                      <span class="P_name">신김치</span>
+                      <span class="F_VOLUME_ARR">200g</span>
+                      <button class="cart border border-0">
+                        <span class="material-symbols-outlined">
+                          shopping_cart
+                        </span>
+                      </button>
+                    </li>
+                    <li class="list-group-item">
+                      <span class="P_name">참기름</span>
+                      <span class="F_VOLUME_ARR">1작은술</span>
+                      <button class="cart border border-0">
+                        <span class="material-symbols-outlined">
+                          shopping_cart
+                        </span>
+                      </button>
+                    </li>
+                    <li class="list-group-item">
+                      <span class="P_name">청고추</span>
+                      <span class="F_VOLUME_ARR">2개</span>
+                      <button class="cart border border-0">
+                        <span class="material-symbols-outlined">
+                          shopping_cart
+                        </span>
+                      </button>
+                    </li>
+                    <li class="list-group-item">
+                      <span class="P_name">대파</span>
+                      <span class="F_VOLUME_ARR">약간</span>
+                      <button class="cart border border-0">
+                        <span class="material-symbols-outlined">
+                          shopping_cart
+                        </span>
+                      </button>
+                    </li>
                   </ul>
                 </div>
-                <div class="col-6">
+                <div class="col-lg-6 col-12">
                   <ul class="list-group list-group-flush">
-                    <li class="list-group-item">An item</li>
-                    <li class="list-group-item">A second item</li>
-                    <li class="list-group-item">A third item</li>
-                    <li class="list-group-item">A fourth item</li>
-                    <li class="list-group-item">And a fifth one</li>
+                    <li class="list-group-item">
+                      <span class="P_name">고추장</span>
+                      <span class="F_VOLUME_ARR">1큰술</span>
+                      <button class="cart border border-0">
+                        <span class="material-symbols-outlined">
+                          shopping_cart
+                        </span>
+                      </button>
+                    </li>
+                    <li class="list-group-item">
+                      <span class="P_name">국간장</span>
+                      <span class="F_VOLUME_ARR">1/2큰술</span>
+                      <button class="cart border border-0">
+                        <span class="material-symbols-outlined">
+                          shopping_cart
+                        </span>
+                      </button>
+                    </li>
+                    <li class="list-group-item">
+                      <span class="P_name">다진마늘</span>
+                      <span class="F_VOLUME_ARR">1큰술</span>
+                      <button class="cart border border-0">
+                        <span class="material-symbols-outlined">
+                          shopping_cart
+                        </span>
+                      </button>
+                    </li>
+                    <li class="list-group-item">
+                      <span class="P_name">소금</span>
+                      <span class="F_VOLUME_ARR">한꼬집</span>
+                      <button class="cart border border-0">
+                        <span class="material-symbols-outlined">
+                          shopping_cart
+                        </span>
+                      </button>
+                    </li>
+                    <li class="list-group-item">
+                      <span class="P_name">물(250ml)</span>
+                      <span class="F_VOLUME_ARR">2컵</span>
+                      <button class="cart border border-0">
+                        <span class="material-symbols-outlined">
+                          shopping_cart
+                        </span>
+                      </button>
+                    </li>
                   </ul>
                 </div>
               </div>
@@ -275,89 +426,64 @@
               <p class="R_title">조리순서</p>
               <div class="col">
                 <dl class="row">
-                  <dt class="col-1 text-center">1</dt>
+                  <dt class="col-sm-1 R_count">1.</dt>
                   <dd class="col-11">
-                    A재료:타코야키파우더,가츠오부시(가다랭이포),타코야끼소스,파래김가루,마요네즈,
-                    쪽파,문어,텐카츠,식용유,타코야끼팬
+                    돼지고기는 는 분량의 양념을 넣어 조물조물 해주신후 30분 이상
+                    재웁니다
                   </dd>
                   <hr />
 
-                  <dt class="col-sm-1 text-center">2</dt>
+                  <dt class="col-sm-1 R_count">2.</dt>
                   <dd class="col-sm-11">
-                    일본식자재파는곳에 가면 저렇게 다꼬파우더와 텐카츠그리고
-                    파래김가루를 팔아요~ 저는 일부러 대용양을 샀어요~ 두고두고
-                    먹으려구요 ㅎㅎㅎ 텐카츠가 없으시면 새우깡이나 감자깡을
-                    부셔서 대체사용가능합니다. 다코파우더가 없다면 가츠오부시와
-                    부침가루를 섞어서 사용하시면 됩니다.
+                    냄비에 썰어둔 김치와 밑간한 돼지고기, 김칫국물 5큰술, 참기름
+                    1작은술을 넣어 약불에서 3~5분간 충분히 볶아줍니다.
                   </dd>
                   <hr />
 
-                  <dt class="col-sm-1 text-center">3</dt>
+                  <dt class="col-sm-1 R_count">3.</dt>
                   <dd class="col-sm-11">
-                    그리고 중요한 재료중에 하나! 마요네즈와 타코야키소스를
-                    준비합니다. 그리고 쪽파를 준비해서 얇게 다져서 준비했어요^^
+                    돼지고기 자체에 지방이 붙어있으니 참기름은 많이 넣지
+                    않으셔도 된답니다. 이렇게 충분히 볶아주세요~.
                   </dd>
                   <hr />
 
-                  <dt class="col-sm-1 text-center">4</dt>
+                  <dt class="col-sm-1 R_count">4.</dt>
                   <dd class="col-sm-11">
-                    그리고 저는 문어를 만질 자신이 없어 손질된 문어를 따로
-                    구매했어요 건문어를 처음에 사용하려 했으나, 건문어를
-                    사용하실분은 4시간이상은 불려야할거 같아요 저는 1시간정도를
-                    불려서 사용해봤는데도 딱딱하더라구요~ 그래서 손질된 생문어를
-                    따로 구매후 살짝 데쳐서 찬물에 헹구어 주었습니다.
+                    충분히 볶아진 김치에 물 1컵을 넣어 끓여줍니다.
                   </dd>
                   <hr />
 
-                  <dt class="col-sm-1 text-center">5</dt>
+                  <dt class="col-sm-1 R_count">5.</dt>
                   <dd class="col-sm-11">
-                    문어를 데쳤으면 작게 썰어서 준비합니다. 저는 대략적으로
-                    가로세로 1cm정도크기로 썰었어요
+                    물 1컵을 넣어 보글보글 끓여준후 나머지 1컵을 더 부워주도록
+                    합니다. 물을 한꺼번에 부워서 끓이는것보다 이렇게 나눠서
+                    끓여주면 국물맛이 더욱 좋아진답니다.
                   </dd>
                   <hr />
-                  <dt class="col-sm-1 text-center">6</dt>
+                  <dt class="col-sm-1 R_count">6.</dt>
                   <dd class="col-sm-11">
-                    타코파우더에 계란을 2개를 넣고 물을 넣은후 섞어주었어요
-                    봉지에 적혀있는 배합은
-                    다코파우더1kg+물3,200ml+계란6개+우유200ml+만능다시100ml 라고
-                    적혀있으니 참고해주세요.
+                    보글보글 국물이 끓으면 여기에 양파와 두부를 넣어줍니다.
                   </dd>
                   <hr />
-                  <dt class="col-sm-1 text-center">7</dt>
+                  <dt class="col-sm-1 R_count">7.</dt>
+                  <dd class="col-sm-11">국간장을 넣어줍니다.</dd>
+                  <hr />
+                  <dt class="col-sm-1 R_count">8.</dt>
                   <dd class="col-sm-11">
-                    타코야끼팬을 준비합니다. 그리고 팬에 기름을 흥건할정도로
-                    칠해줍니다. 이제 불을켜서 팬을 달궈준뒤 팬이 달아오르면 불을
-                    줄인후 반죽물을 가득안차게 부어줍니다.
+                    모든 재료가 한데 잘 어우러졌다면 다진마늘과 어슷 썬 고추
+                    1개를 넣어줍니다.
                   </dd>
                   <hr />
-                  <dt class="col-sm-1 text-center">8</dt>
+                  <dt class="col-sm-1 R_count">9.</dt>
                   <dd class="col-sm-11">
-                    반죽물에 문어 쏙쏙! 그리고덴카츠 듬뿍~! 쪽파도 듬뿍듬뿍~!
-                    마무리로 반죽물을 더 가득 부어줍니다.
-                  </dd>
-                  <hr />
-                  <dt class="col-sm-1 text-center">9</dt>
-                  <dd class="col-sm-11">
-                    자, 이제 꼬챙이가 필요할 시기네요! 요 꼬챙이가 없다면
-                    젓가락을 사용하셔도 됩니다. 꼬챙이를 이용해서 둥굴게
-                    안쪽으로 밀면서 해줍니다.
-                  </dd>
-                  <hr />
-                  <dt class="col-sm-1 text-center">10</dt>
-                  <dd class="col-sm-11">
-                    그릇에 타코야끼를 담고, 가츠오부시를 살짝만 뿌려줍니다.
-                    그리고 마요네즈+타코야끼소스를 골고루 뿌려줍니다. 그리고
-                    비쥬얼 이쁜 파래가루를 뿌려준뒤,
-                  </dd>
-                  <hr />
-                  <dt class="col-sm-1 text-center">11</dt>
-                  <dd class="col-sm-11">
-                    가츠오부시를 듬뿍 뿌려주면 타코야끼 만들기 완성입니다.!
+                    부족한 간은 소금으로 해주시고 대파와 나머지 고추 1개를 더
+                    넣어 한소끔 더 끓이신후 마무리 합니다.
                   </dd>
                 </dl>
                 <!-- ====================================레시피 끝=========================================== -->
               </div>
               <hr />
+              <br />
               <div class="row R_vod">
                 <div class="col">
                   <p class="R_title">유투브 리스트</p>
@@ -372,7 +498,11 @@
               </div>
               <hr />
               <div class="row R_map">
-                <p class="R_title">요리하기 귀찮을 땐 외식!</p>
+                <p class="R_title">요리하기 귀찮을 땐</p>
+                <p>
+                  내 주변 <span class="P_name"> 돼지고기 김치찌개</span>맛집을
+                  찾아봤어요
+                </p>
                 <img
                   src="https://devtalk.kakao.com/uploads/default/original/2X/e/e05c575ad0c19db0ab949aaf958c4575f7ba82cb.JPG"
                   alt=""
@@ -382,150 +512,204 @@
             </div>
           </div>
         </div>
-        <hr />
-        <div class="row swp">
-          <div class="col swp_title">
-            <h3>추천 레시피</h3>
-            <hr />
-            <!-- Swiper -->
-            <div class="swiper mySwiper">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <div class="m_rank">1</div>
-                  <a href="TestPage1.html">
+      </div>
+      <div class="row swp">
+        <div class="col swp_title">
+          <h3>추천 레시피</h3>
+          <hr />
+          <!-- Swiper -->
+          <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="m_rank">1</div>
+                <div class="card border">
+                  <a href="R_result.html">
                     <img
-                      src="https://an2-img.amz.wtchn.net/image/v2/Vnn_KYM-QxlK00ydZiSpKA.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk5Ea3dlRGN3TUhFNE1DSmRMQ0p3SWpvaUwzWXlMM04wYjNKbEwybHRZV2RsTHpFM01ESXdNakl6TURJek1qQXdOVGs1TnpFaWZRLnZXakM5cEZMT2hzLXhnOXl3dGpsdU1RVHpZSUw2NFRBazRsZ3RiUFdhdXc"
-                      alt=""
+                      src="https://recipe1.ezmember.co.kr/cache/recipe/2015/08/25/a01d013a6b6f9d526c43f4659db2cd61.jpg"
+                      class="card-img-top"
+                      alt="..."
                     />
                   </a>
-                  <p class="m_text">
-                    <span class="m_title">웡카</span>
-                    <br />
-                    <span class="m_year">2023</span>
-                    <br />
-                    <span class="m_viewCnt">누적관객 1000만명</span>
-                  </p>
-                </div>
-                <div class="swiper-slide">
-                  <div class="m_rank">2</div>
-
-                  <img
-                    src="https://an2-img.amz.wtchn.net/image/v2/COd36HmqB364TA0ZDzcWGQ.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk5Ea3dlRGN3TUhFNE1DSmRMQ0p3SWpvaUwzWXlMM04wYjNKbEwybHRZV2RsTHpJM01qYzFNakEzTlRNeE1qQXdNaUo5LklhOFRMc2hOdzh3dGRob3d2NEFmTVdDdlUxanUzVlhxWGt3cG9ja2gzdHc"
-                    alt=""
-                  />
-
-                  <p class="m_text">
-                    <span class="m_title">데드맨</span>
-                    <br />
-                    <span class="m_year">2023</span>
-                    <br />
-                    <span class="m_viewCnt">누적관객 1000만명</span>
-                  </p>
-                </div>
-                <div class="swiper-slide">
-                  <div class="m_rank">3</div>
-                  <img
-                    src="https://an2-img.amz.wtchn.net/image/v2/wbNmMNrrIIoy-nBkqUDNzw.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk5Ea3dlRGN3TUhFNE1DSmRMQ0p3SWpvaUwzWXlMM04wYjNKbEwybHRZV2RsTHpFek5qVTVPRGcxTkRreE1EVXdPRFlpZlEudkdSQWd6VFcySXZPY0oweFN4SmxYLUYtcGl5cnV2V19GbHVuQlZpWDRZNA"
-                    alt=""
-                  />
-                  <p class="m_text">
-                    <span class="m_title">추락의해부</span>
-                    <br />
-                    <span class="m_year">2023</span>
-                    <br />
-                    <span class="m_viewCnt">누적관객 1000만명</span>
-                  </p>
-                </div>
-                <div class="swiper-slide">
-                  <div class="m_rank">4</div>
-                  <img
-                    src="https://an2-img.amz.wtchn.net/image/v2/yKEAmMlocs_b3SPRae-7Wg.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk5Ea3dlRGN3TUhFNE1DSmRMQ0p3SWpvaUwzWXlMM04wYjNKbEwybHRZV2RsTHpZeE1qWTNOVEk0TmpFek1qazVNQ0o5LkU1ejFkU0hEeFVKNGFnaW1kODVfSFZlR0ducEZUYUhUaDBUZFA3TlFQdFU"
-                    alt=""
-                  />
-                  <p class="m_text">
-                    <span class="m_title">도그데이즈</span>
-                    <br />
-                    <span class="m_year">2023</span>
-                    <br />
-                    <span class="m_viewCnt">누적관객1000만명</span>
-                  </p>
-                </div>
-                <div class="swiper-slide">
-                  <div class="m_rank">5</div>
-                  <img
-                    src="https://an2-img.amz.wtchn.net/image/v2/j0Spcq9Q3BOfW5_V1x_VYg.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk5Ea3dlRGN3TUhFNE1DSmRMQ0p3SWpvaUwzWXlMM04wYjNKbEwybHRZV2RsTHpRd09EZ3pNakkxT0RNMU5EZzRNeUo5Lk5XalNwVXk2enV6ZElVemN5NUdYbGlHWndxTFpENTJoZ1ZyU1ozM2hwN00"
-                    alt=""
-                  />
-                  <p class="m_text">
-                    <span class="m_title">귀멸의카라날</span>
-                    <br />
-                    <span class="m_year">2023</span>
-                    <br />
-                    <span class="m_viewCnt">누적관객1000만명</span>
-                  </p>
-                </div>
-                <div class="swiper-slide">
-                  <div class="m_rank">6</div>
-                  <img
-                    src="https://an2-img.amz.wtchn.net/image/v2/W7kXcsp1BfeVwgU3s1hnLA.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk5Ea3dlRGN3TUhFNE1DSmRMQ0p3SWpvaUwzWXlMM04wYjNKbEwybHRZV2RsTHpjME1EQXhOemc0T0RFMU5Ea2lmUS5sRmlMb2tnT2JEVGlhMl9CdGpFN0ViLVlJT0xqUGg5WDllcmZSdWE5YmRn"
-                    alt=""
-                  />
-                  <p class="m_text">
-                    <span class="m_title">소풍</span>
-                    <br />
-                    <span class="m_year">2023</span>
-                    <br />
-                    <span class="m_viewCnt">누적관객1000만명</span>
-                  </p>
-                </div>
-                <div class="swiper-slide">
-                  <div class="m_rank">7</div>
-                  <img
-                    src="https://an2-img.amz.wtchn.net/image/v2/BVr3Ql2nPNTB6VZ28SdeTw.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk5Ea3dlRGN3TUhFNE1DSmRMQ0p3SWpvaUwzWXlMM04wYjNKbEwybHRZV2RsTHpVMU9ETTJOakExT0RFME1qZzNNU0o5LnAzR05NcDhXRktJRTdQUlpTVnF4UUlZdm5PbHRUQi1ZQWtkaXc4djRaYU0"
-                    alt=""
-                  />
-                  <p class="m_text">
-                    <span class="m_title">아가리</span>
-                    <br />
-                    <span class="m_year">2023</span>
-                    <br />
-                    <span class="m_viewCnt">누적관객1000만명</span>
-                  </p>
-                </div>
-                <div class="swiper-slide">
-                  <div class="m_rank">8</div>
-                  <img
-                    src="https://an2-img.amz.wtchn.net/image/v2/w4Bb2H7qW3eVsRBpvGcBug.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk5Ea3dlRGN3TUhFNE1DSmRMQ0p3SWpvaUwzWXlMM04wYjNKbEwybHRZV2RsTHpFM01ETXdOamN4TlRnMk1qWXlNVEUxTnpJaWZRLm16OGZ4RUxaYlkyV3docDlnTzh3UHFMUUd2ejQ2bDhXaFZ6VjhrXzJuSWs"
-                    alt=""
-                  />
-                  <p class="m_text">
-                    <span class="m_title">시민더끼</span>
-                    <br />
-                    <span class="m_year">2023</span>
-                    <br />
-                    <span class="m_viewCnt">누적관객1000만명</span>
-                  </p>
-                </div>
-                <div class="swiper-slide">
-                  <div class="m_rank">9</div>
-                  <img
-                    src="https://an2-img.amz.wtchn.net/image/v2/UyrD7ZTYIccE-ifGQB-SgQ.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk5Ea3dlRGN3TUhFNE1DSmRMQ0p3SWpvaUwzWXlMM04wYjNKbEwybHRZV2RsTHpFd05qRTNNakV6T0RreU1qYzRPQ0o5Lm90YzA3YTR2ZGo3ZjFYSi16Wm1iWkdULVp1bmFDYk1GVThfZTJPRnFTT0E"
-                    alt=""
-                  />
-                  <p class="m_text">
-                    <span class="m_title">아빠상어도 청춘이있어</span>
-                    <br />
-                    <span class="m_year">2023</span>
-                    <br />
-                    <span class="m_viewCnt">누적관객1000만명</span>
-                  </p>
+                  <div class="card-body">
+                    <h5 class="card-title">돼지고기 김치찌개</h5>
+                    <p class="card-text text-muted small">
+                      <span class="R_category">한식</span
+                      ><span class="R_category">국물</span
+                      ><span class="R_category">매운거</span>
+                    </p>
+                  </div>
                 </div>
               </div>
-              <div class="swiper-button-next"></div>
-              <div class="swiper-button-prev"></div>
+              <div class="swiper-slide">
+                <div class="m_rank">2</div>
+                <div class="card border">
+                  <a href="R_result.html">
+                    <img src="img/food1.jpg" class="card-img-top" alt="..." />
+                  </a>
+                  <div class="card-body">
+                    <h5 class="card-title">돼지고기 김치찌개</h5>
+                    <p class="card-text text-muted small">
+                      <span class="R_category">한식</span
+                      ><span class="R_category">국물</span
+                      ><span class="R_category">매운거</span>
+                      <span class="R_category">매운거</span>
+                      <span class="R_category">매운거</span>
+                      <span class="R_category">매운거</span>
+                      <span class="R_category">매운거</span>
+                      <span class="R_category">매운거</span>
+                      <span class="R_category">매운거</span>
+                      <span class="R_category">매운거</span>
+                      <span class="R_category">매운거</span>
+                      <a href="#" class="see-more">...</a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="m_rank">3</div>
+                <div class="card border">
+                  <a href="R_result.html">
+                    <img
+                      src="https://recipe1.ezmember.co.kr/cache/recipe/2015/08/25/a01d013a6b6f9d526c43f4659db2cd61.jpg"
+                      class="card-img-top"
+                      alt="..."
+                    />
+                  </a>
+                  <div class="card-body">
+                    <h5 class="card-title">돼지고기 김치찌개</h5>
+                    <p class="card-text text-muted small">
+                      <span class="R_category">한식</span
+                      ><span class="R_category">국물</span
+                      ><span class="R_category">매운거</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="m_rank">4</div>
+                <div class="card border">
+                  <a href="R_result.html">
+                    <img
+                      src="https://recipe1.ezmember.co.kr/cache/recipe/2015/08/25/a01d013a6b6f9d526c43f4659db2cd61.jpg"
+                      class="card-img-top"
+                      alt="..."
+                    />
+                  </a>
+                  <div class="card-body">
+                    <h5 class="card-title">돼지고기 김치찌개</h5>
+                    <p class="card-text text-muted small">
+                      <span class="R_category">한식</span
+                      ><span class="R_category">국물</span
+                      ><span class="R_category">매운거</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="m_rank">5</div>
+                <div class="card border">
+                  <a href="R_result.html">
+                    <img
+                      src="https://recipe1.ezmember.co.kr/cache/recipe/2015/08/25/a01d013a6b6f9d526c43f4659db2cd61.jpg"
+                      class="card-img-top"
+                      alt="..."
+                    />
+                  </a>
+                  <div class="card-body">
+                    <h5 class="card-title">돼지고기 김치찌개</h5>
+                    <p class="card-text text-muted small">
+                      <span class="R_category">한식</span
+                      ><span class="R_category">국물</span
+                      ><span class="R_category">매운거</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="m_rank">6</div>
+                <div class="card border">
+                  <a href="R_result.html">
+                    <img
+                      src="https://recipe1.ezmember.co.kr/cache/recipe/2015/08/25/a01d013a6b6f9d526c43f4659db2cd61.jpg"
+                      class="card-img-top"
+                      alt="..."
+                    />
+                  </a>
+                  <div class="card-body">
+                    <h5 class="card-title">돼지고기 김치찌개</h5>
+                    <p class="card-text text-muted small">
+                      <span class="R_category">한식</span
+                      ><span class="R_category">국물</span
+                      ><span class="R_category">매운거</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="m_rank">7</div>
+                <div class="card border">
+                  <a href="R_result.html">
+                    <img
+                      src="https://recipe1.ezmember.co.kr/cache/recipe/2015/08/25/a01d013a6b6f9d526c43f4659db2cd61.jpg"
+                      class="card-img-top"
+                      alt="..."
+                    />
+                  </a>
+                  <div class="card-body">
+                    <h5 class="card-title">돼지고기 김치찌개</h5>
+                    <p class="card-text text-muted small">
+                      <span class="R_category">한식</span
+                      ><span class="R_category">국물</span
+                      ><span class="R_category">매운거</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="m_rank">8</div>
+                <div class="card border">
+                  <a href="R_result.html">
+                    <img
+                      src="https://recipe1.ezmember.co.kr/cache/recipe/2015/08/25/a01d013a6b6f9d526c43f4659db2cd61.jpg"
+                      class="card-img-top"
+                      alt="..."
+                    />
+                  </a>
+                  <div class="card-body">
+                    <h5 class="card-title">돼지고기 김치찌개</h5>
+                    <p class="card-text text-muted small">
+                      <span class="R_category">한식</span
+                      ><span class="R_category">국물</span
+                      ><span class="R_category">매운거</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="m_rank">9</div>
+                <div class="card border">
+                  <a href="R_result.html">
+                    <img
+                      src="https://recipe1.ezmember.co.kr/cache/recipe/2015/08/25/a01d013a6b6f9d526c43f4659db2cd61.jpg"
+                      class="card-img-top"
+                      alt="..."
+                    />
+                  </a>
+                  <div class="card-body">
+                    <h5 class="card-title">돼지고기 김치찌개</h5>
+                    <p class="card-text text-muted small">
+                      <span class="R_category">한식</span
+                      ><span class="R_category">국물</span
+                      ><span class="R_category">매운거</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
-            <hr />
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
           </div>
+          <hr />
         </div>
       </div>
     </div>
@@ -556,10 +740,31 @@
           },
           // 너비가 780px 이하일 때
           100: {
-            slidesPerView: 3,
+            slidesPerView: 2,
             spaceBetween: 10,
           },
         },
+      });
+    </script>
+    <script>
+      $(document).ready(function () {
+        $(".card-body").each(function () {
+          var maxSpanCount = 3; // 최대 표시할 span 태그의 수
+          var spans = $(this).find(".R_category");
+          if (spans.length > maxSpanCount) {
+            spans.slice(maxSpanCount).hide(); // 초과하는 span 숨기기
+            $(this).find(".see-more").show().text("..."); // "상세카테고리" 링크 표시
+          } else {
+            $(this).find(".see-more").hide(); // span 개수가 maxSpanCount 이하면 "더보기" 링크 숨기기
+          }
+        });
+
+        $(".see-more").click(function (e) {
+          e.preventDefault();
+          var isVisible = $(this).text() === "...";
+          $(this).parent().find(".R_category").slice(3).toggle(); // 숨겨진 .R_category 토글
+          $(this).text(isVisible ? "접기" : "..."); // 버튼 텍스트 토글
+        });
       });
     </script>
   </body>

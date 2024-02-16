@@ -37,9 +37,7 @@
       height: 100%;
       background-color: #f1f1f2;
     }
-    .container {
-      width: 80%;
-    }
+
     /* =======네브바======== */
     .navbar {
       position: fixed;
@@ -57,7 +55,8 @@
     }
 
     /* =======포스터======== */
-    .M_row {
+    .M_row,
+    .swp {
       position: relative;
       top: 100px;
     }
@@ -68,12 +67,15 @@
       width: 100%;
       top: auto;
       min-width: 200px;
+      margin-bottom: 30px;
+      padding: 30px;
     }
     .S_mapButton {
       width: 80px;
       height: 30px;
       background-color: lightgray;
-      margin: 0 10px;
+      margin: 5px 10px 0 10px;
+      border-radius: 10px;
     }
     .S_mapButton:hover {
       background-color: wheat;
@@ -83,7 +85,7 @@
 
     .maintext {
       line-height: 15px;
-      padding: 5px;
+      padding: 10px;
     }
     .maintext h1 {
       font-size: 30px;
@@ -118,14 +120,17 @@
       justify-content: center;
       align-items: center;
       flex-direction: column;
+      border-radius: 10px;
     }
 
     .swiper-slide img {
       display: block;
       width: 100%;
-      height: auto;
-      object-fit: contain;
+      height: 300px auto;
+      object-fit: cover;
       min-width: 100px;
+      border-radius: 10px;
+      aspect-ratio: 4 /6;
     }
 
     .swiper-button-next,
@@ -133,6 +138,9 @@
       color: lightgray;
     }
     @media screen and (max-width: 1050px) {
+      .M_poster img {
+        padding: 0;
+      }
       .swiper {
         width: 100%;
       }
@@ -237,13 +245,13 @@
       <div class="row M_row">
         <h1 class="Maintit">당신의 취향에 맞는 공연를 추천!</h1>
         <hr />
-        <div class="col-md-3 col-12 M_poster">
+        <div class="col-md-4 col-12 M_poster">
           <img
             src="https://www.kopis.or.kr/upload/pfmPoster/PF_PF234756_240131_111042.jpg"
             alt=""
           />
         </div>
-        <div class="col-md-9 col-12 M_content">
+        <div class="col-md-8 col-12 M_content">
           <div class="row">
             <div class="col-12 maintext">
               <h1 class="tit">
@@ -253,7 +261,8 @@
               <p class="p1">2024.03.19(화) ~ 2024.03.19(화) / 화요일(19:30)</p>
               <p class="p2">
                 강릉아트센터(구. 강릉문화예술관) 소공연장
-                <button class="S_mapButton">지도보기</button>/ 만 7세 이상
+                <button class="S_mapButton border-0">지도보기</button>/ 만 7세
+                이상
               </p>
               <p class="p3">R석 50,000원 S석 30,000원</p>
             </div>
@@ -286,150 +295,150 @@
             </div>
           </div>
         </div>
-        <hr />
-        <div class="row swp">
-          <div class="col swp_title">
-            <h3>추천 공연</h3>
-            <hr />
-            <!-- Swiper -->
-            <div class="swiper mySwiper">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <div class="m_rank">1</div>
-                  <a href="TestPage1.html">
-                    <img
-                      src="https://an2-img.amz.wtchn.net/image/v2/Vnn_KYM-QxlK00ydZiSpKA.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk5Ea3dlRGN3TUhFNE1DSmRMQ0p3SWpvaUwzWXlMM04wYjNKbEwybHRZV2RsTHpFM01ESXdNakl6TURJek1qQXdOVGs1TnpFaWZRLnZXakM5cEZMT2hzLXhnOXl3dGpsdU1RVHpZSUw2NFRBazRsZ3RiUFdhdXc"
-                      alt=""
-                    />
-                  </a>
-                  <p class="m_text">
-                    <span class="m_title">웡카</span>
-                    <br />
-                    <span class="m_year">2023</span>
-                    <br />
-                    <span class="m_viewCnt">누적관객 1000만명</span>
-                  </p>
-                </div>
-                <div class="swiper-slide">
-                  <div class="m_rank">2</div>
+      </div>
 
+      <div class="row swp">
+        <div class="col swp_title">
+          <h3>추천 공연</h3>
+          <hr />
+          <!-- Swiper -->
+          <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="m_rank">1</div>
+                <a href="TestPage1.html">
                   <img
-                    src="https://an2-img.amz.wtchn.net/image/v2/COd36HmqB364TA0ZDzcWGQ.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk5Ea3dlRGN3TUhFNE1DSmRMQ0p3SWpvaUwzWXlMM04wYjNKbEwybHRZV2RsTHpJM01qYzFNakEzTlRNeE1qQXdNaUo5LklhOFRMc2hOdzh3dGRob3d2NEFmTVdDdlUxanUzVlhxWGt3cG9ja2gzdHc"
+                    src="https://an2-img.amz.wtchn.net/image/v2/Vnn_KYM-QxlK00ydZiSpKA.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk5Ea3dlRGN3TUhFNE1DSmRMQ0p3SWpvaUwzWXlMM04wYjNKbEwybHRZV2RsTHpFM01ESXdNakl6TURJek1qQXdOVGs1TnpFaWZRLnZXakM5cEZMT2hzLXhnOXl3dGpsdU1RVHpZSUw2NFRBazRsZ3RiUFdhdXc"
                     alt=""
                   />
-
-                  <p class="m_text">
-                    <span class="m_title">데드맨</span>
-                    <br />
-                    <span class="m_year">2023</span>
-                    <br />
-                    <span class="m_viewCnt">누적관객 1000만명</span>
-                  </p>
-                </div>
-                <div class="swiper-slide">
-                  <div class="m_rank">3</div>
-                  <img
-                    src="https://an2-img.amz.wtchn.net/image/v2/wbNmMNrrIIoy-nBkqUDNzw.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk5Ea3dlRGN3TUhFNE1DSmRMQ0p3SWpvaUwzWXlMM04wYjNKbEwybHRZV2RsTHpFek5qVTVPRGcxTkRreE1EVXdPRFlpZlEudkdSQWd6VFcySXZPY0oweFN4SmxYLUYtcGl5cnV2V19GbHVuQlZpWDRZNA"
-                    alt=""
-                  />
-                  <p class="m_text">
-                    <span class="m_title">추락의해부</span>
-                    <br />
-                    <span class="m_year">2023</span>
-                    <br />
-                    <span class="m_viewCnt">누적관객 1000만명</span>
-                  </p>
-                </div>
-                <div class="swiper-slide">
-                  <div class="m_rank">4</div>
-                  <img
-                    src="https://an2-img.amz.wtchn.net/image/v2/yKEAmMlocs_b3SPRae-7Wg.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk5Ea3dlRGN3TUhFNE1DSmRMQ0p3SWpvaUwzWXlMM04wYjNKbEwybHRZV2RsTHpZeE1qWTNOVEk0TmpFek1qazVNQ0o5LkU1ejFkU0hEeFVKNGFnaW1kODVfSFZlR0ducEZUYUhUaDBUZFA3TlFQdFU"
-                    alt=""
-                  />
-                  <p class="m_text">
-                    <span class="m_title">도그데이즈</span>
-                    <br />
-                    <span class="m_year">2023</span>
-                    <br />
-                    <span class="m_viewCnt">누적관객1000만명</span>
-                  </p>
-                </div>
-                <div class="swiper-slide">
-                  <div class="m_rank">5</div>
-                  <img
-                    src="https://an2-img.amz.wtchn.net/image/v2/j0Spcq9Q3BOfW5_V1x_VYg.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk5Ea3dlRGN3TUhFNE1DSmRMQ0p3SWpvaUwzWXlMM04wYjNKbEwybHRZV2RsTHpRd09EZ3pNakkxT0RNMU5EZzRNeUo5Lk5XalNwVXk2enV6ZElVemN5NUdYbGlHWndxTFpENTJoZ1ZyU1ozM2hwN00"
-                    alt=""
-                  />
-                  <p class="m_text">
-                    <span class="m_title">귀멸의카라날</span>
-                    <br />
-                    <span class="m_year">2023</span>
-                    <br />
-                    <span class="m_viewCnt">누적관객1000만명</span>
-                  </p>
-                </div>
-                <div class="swiper-slide">
-                  <div class="m_rank">6</div>
-                  <img
-                    src="https://an2-img.amz.wtchn.net/image/v2/W7kXcsp1BfeVwgU3s1hnLA.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk5Ea3dlRGN3TUhFNE1DSmRMQ0p3SWpvaUwzWXlMM04wYjNKbEwybHRZV2RsTHpjME1EQXhOemc0T0RFMU5Ea2lmUS5sRmlMb2tnT2JEVGlhMl9CdGpFN0ViLVlJT0xqUGg5WDllcmZSdWE5YmRn"
-                    alt=""
-                  />
-                  <p class="m_text">
-                    <span class="m_title">소풍</span>
-                    <br />
-                    <span class="m_year">2023</span>
-                    <br />
-                    <span class="m_viewCnt">누적관객1000만명</span>
-                  </p>
-                </div>
-                <div class="swiper-slide">
-                  <div class="m_rank">7</div>
-                  <img
-                    src="https://an2-img.amz.wtchn.net/image/v2/BVr3Ql2nPNTB6VZ28SdeTw.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk5Ea3dlRGN3TUhFNE1DSmRMQ0p3SWpvaUwzWXlMM04wYjNKbEwybHRZV2RsTHpVMU9ETTJOakExT0RFME1qZzNNU0o5LnAzR05NcDhXRktJRTdQUlpTVnF4UUlZdm5PbHRUQi1ZQWtkaXc4djRaYU0"
-                    alt=""
-                  />
-                  <p class="m_text">
-                    <span class="m_title">아가리</span>
-                    <br />
-                    <span class="m_year">2023</span>
-                    <br />
-                    <span class="m_viewCnt">누적관객1000만명</span>
-                  </p>
-                </div>
-                <div class="swiper-slide">
-                  <div class="m_rank">8</div>
-                  <img
-                    src="https://an2-img.amz.wtchn.net/image/v2/w4Bb2H7qW3eVsRBpvGcBug.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk5Ea3dlRGN3TUhFNE1DSmRMQ0p3SWpvaUwzWXlMM04wYjNKbEwybHRZV2RsTHpFM01ETXdOamN4TlRnMk1qWXlNVEUxTnpJaWZRLm16OGZ4RUxaYlkyV3docDlnTzh3UHFMUUd2ejQ2bDhXaFZ6VjhrXzJuSWs"
-                    alt=""
-                  />
-                  <p class="m_text">
-                    <span class="m_title">시민더끼</span>
-                    <br />
-                    <span class="m_year">2023</span>
-                    <br />
-                    <span class="m_viewCnt">누적관객1000만명</span>
-                  </p>
-                </div>
-                <div class="swiper-slide">
-                  <div class="m_rank">9</div>
-                  <img
-                    src="https://an2-img.amz.wtchn.net/image/v2/UyrD7ZTYIccE-ifGQB-SgQ.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk5Ea3dlRGN3TUhFNE1DSmRMQ0p3SWpvaUwzWXlMM04wYjNKbEwybHRZV2RsTHpFd05qRTNNakV6T0RreU1qYzRPQ0o5Lm90YzA3YTR2ZGo3ZjFYSi16Wm1iWkdULVp1bmFDYk1GVThfZTJPRnFTT0E"
-                    alt=""
-                  />
-                  <p class="m_text">
-                    <span class="m_title">아빠상어도 청춘이있어</span>
-                    <br />
-                    <span class="m_year">2023</span>
-                    <br />
-                    <span class="m_viewCnt">누적관객1000만명</span>
-                  </p>
-                </div>
+                </a>
+                <p class="m_text">
+                  <span class="m_title">웡카</span>
+                  <br />
+                  <span class="m_year">2023</span>
+                  <br />
+                  <span class="m_viewCnt">누적관객 1000만명</span>
+                </p>
               </div>
-              <div class="swiper-button-next"></div>
-              <div class="swiper-button-prev"></div>
+              <div class="swiper-slide">
+                <div class="m_rank">2</div>
+
+                <img
+                  src="https://an2-img.amz.wtchn.net/image/v2/COd36HmqB364TA0ZDzcWGQ.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk5Ea3dlRGN3TUhFNE1DSmRMQ0p3SWpvaUwzWXlMM04wYjNKbEwybHRZV2RsTHpJM01qYzFNakEzTlRNeE1qQXdNaUo5LklhOFRMc2hOdzh3dGRob3d2NEFmTVdDdlUxanUzVlhxWGt3cG9ja2gzdHc"
+                  alt=""
+                />
+
+                <p class="m_text">
+                  <span class="m_title">데드맨</span>
+                  <br />
+                  <span class="m_year">2023</span>
+                  <br />
+                  <span class="m_viewCnt">누적관객 1000만명</span>
+                </p>
+              </div>
+              <div class="swiper-slide">
+                <div class="m_rank">3</div>
+                <img
+                  src="https://an2-img.amz.wtchn.net/image/v2/wbNmMNrrIIoy-nBkqUDNzw.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk5Ea3dlRGN3TUhFNE1DSmRMQ0p3SWpvaUwzWXlMM04wYjNKbEwybHRZV2RsTHpFek5qVTVPRGcxTkRreE1EVXdPRFlpZlEudkdSQWd6VFcySXZPY0oweFN4SmxYLUYtcGl5cnV2V19GbHVuQlZpWDRZNA"
+                  alt=""
+                />
+                <p class="m_text">
+                  <span class="m_title">추락의해부</span>
+                  <br />
+                  <span class="m_year">2023</span>
+                  <br />
+                  <span class="m_viewCnt">누적관객 1000만명</span>
+                </p>
+              </div>
+              <div class="swiper-slide">
+                <div class="m_rank">4</div>
+                <img
+                  src="https://an2-img.amz.wtchn.net/image/v2/yKEAmMlocs_b3SPRae-7Wg.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk5Ea3dlRGN3TUhFNE1DSmRMQ0p3SWpvaUwzWXlMM04wYjNKbEwybHRZV2RsTHpZeE1qWTNOVEk0TmpFek1qazVNQ0o5LkU1ejFkU0hEeFVKNGFnaW1kODVfSFZlR0ducEZUYUhUaDBUZFA3TlFQdFU"
+                  alt=""
+                />
+                <p class="m_text">
+                  <span class="m_title">도그데이즈</span>
+                  <br />
+                  <span class="m_year">2023</span>
+                  <br />
+                  <span class="m_viewCnt">누적관객1000만명</span>
+                </p>
+              </div>
+              <div class="swiper-slide">
+                <div class="m_rank">5</div>
+                <img
+                  src="https://an2-img.amz.wtchn.net/image/v2/j0Spcq9Q3BOfW5_V1x_VYg.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk5Ea3dlRGN3TUhFNE1DSmRMQ0p3SWpvaUwzWXlMM04wYjNKbEwybHRZV2RsTHpRd09EZ3pNakkxT0RNMU5EZzRNeUo5Lk5XalNwVXk2enV6ZElVemN5NUdYbGlHWndxTFpENTJoZ1ZyU1ozM2hwN00"
+                  alt=""
+                />
+                <p class="m_text">
+                  <span class="m_title">귀멸의카라날</span>
+                  <br />
+                  <span class="m_year">2023</span>
+                  <br />
+                  <span class="m_viewCnt">누적관객1000만명</span>
+                </p>
+              </div>
+              <div class="swiper-slide">
+                <div class="m_rank">6</div>
+                <img
+                  src="https://an2-img.amz.wtchn.net/image/v2/W7kXcsp1BfeVwgU3s1hnLA.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk5Ea3dlRGN3TUhFNE1DSmRMQ0p3SWpvaUwzWXlMM04wYjNKbEwybHRZV2RsTHpjME1EQXhOemc0T0RFMU5Ea2lmUS5sRmlMb2tnT2JEVGlhMl9CdGpFN0ViLVlJT0xqUGg5WDllcmZSdWE5YmRn"
+                  alt=""
+                />
+                <p class="m_text">
+                  <span class="m_title">소풍</span>
+                  <br />
+                  <span class="m_year">2023</span>
+                  <br />
+                  <span class="m_viewCnt">누적관객1000만명</span>
+                </p>
+              </div>
+              <div class="swiper-slide">
+                <div class="m_rank">7</div>
+                <img
+                  src="https://an2-img.amz.wtchn.net/image/v2/BVr3Ql2nPNTB6VZ28SdeTw.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk5Ea3dlRGN3TUhFNE1DSmRMQ0p3SWpvaUwzWXlMM04wYjNKbEwybHRZV2RsTHpVMU9ETTJOakExT0RFME1qZzNNU0o5LnAzR05NcDhXRktJRTdQUlpTVnF4UUlZdm5PbHRUQi1ZQWtkaXc4djRaYU0"
+                  alt=""
+                />
+                <p class="m_text">
+                  <span class="m_title">아가리</span>
+                  <br />
+                  <span class="m_year">2023</span>
+                  <br />
+                  <span class="m_viewCnt">누적관객1000만명</span>
+                </p>
+              </div>
+              <div class="swiper-slide">
+                <div class="m_rank">8</div>
+                <img
+                  src="https://an2-img.amz.wtchn.net/image/v2/w4Bb2H7qW3eVsRBpvGcBug.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk5Ea3dlRGN3TUhFNE1DSmRMQ0p3SWpvaUwzWXlMM04wYjNKbEwybHRZV2RsTHpFM01ETXdOamN4TlRnMk1qWXlNVEUxTnpJaWZRLm16OGZ4RUxaYlkyV3docDlnTzh3UHFMUUd2ejQ2bDhXaFZ6VjhrXzJuSWs"
+                  alt=""
+                />
+                <p class="m_text">
+                  <span class="m_title">시민더끼</span>
+                  <br />
+                  <span class="m_year">2023</span>
+                  <br />
+                  <span class="m_viewCnt">누적관객1000만명</span>
+                </p>
+              </div>
+              <div class="swiper-slide">
+                <div class="m_rank">9</div>
+                <img
+                  src="https://an2-img.amz.wtchn.net/image/v2/UyrD7ZTYIccE-ifGQB-SgQ.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk5Ea3dlRGN3TUhFNE1DSmRMQ0p3SWpvaUwzWXlMM04wYjNKbEwybHRZV2RsTHpFd05qRTNNakV6T0RreU1qYzRPQ0o5Lm90YzA3YTR2ZGo3ZjFYSi16Wm1iWkdULVp1bmFDYk1GVThfZTJPRnFTT0E"
+                  alt=""
+                />
+                <p class="m_text">
+                  <span class="m_title">아빠상어도 청춘이있어</span>
+                  <br />
+                  <span class="m_year">2023</span>
+                  <br />
+                  <span class="m_viewCnt">누적관객1000만명</span>
+                </p>
+              </div>
             </div>
-            <hr />
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
           </div>
+          <hr />
         </div>
       </div>
     </div>

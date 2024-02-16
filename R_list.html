@@ -47,7 +47,29 @@
     }
     .card {
       display: none;
+      min-height: auto;
     }
+    .card-text {
+      white-space: nowrap;
+      overflow-x: auto;
+    }
+    .card-text::-webkit-scrollbar {
+      width: 5px; /* 스크롤바의 너비 */
+      height: 3px; /* 수평 스크롤바의 높이 */
+    }
+
+    .card-text::-webkit-scrollbar-track {
+      background: #f1f1f1; /* 스크롤바 트랙의 배경색 */
+    }
+
+    .card-text::-webkit-scrollbar-thumb {
+      background: #888; /* 스크롤바 썸의 배경색 */
+    }
+
+    .card-text::-webkit-scrollbar-thumb:hover {
+      background: #555; /* 스크롤바 썸에 마우스를 올렸을 때의 배경색 */
+    }
+
     .card.show {
       display: block;
     }
@@ -101,6 +123,7 @@
       }
       .card {
         display: none;
+        min-height: auto;
       }
       .card-title {
         font-size: 14px;
@@ -184,7 +207,7 @@
         <!-- =======================================카드하나=============================================== -->
         <div class="col-6 col-md-6 col-lg-4 col-xl-3 mb-2">
           <div class="card border">
-            <a href="test111.html">
+            <a href="R_result.html">
               <img
                 src="https://recipe1.ezmember.co.kr/cache/recipe/2015/08/25/a01d013a6b6f9d526c43f4659db2cd61.jpg"
                 class="card-img-top"
@@ -473,6 +496,7 @@
         }
       });
     </script>
+
     <!-- <script>
       $(document).ready(function () {
         $(".card-body").each(function () {
