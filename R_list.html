@@ -105,6 +105,10 @@
       .card-title {
         font-size: 14px;
       }
+      .card-text {
+        white-space: nowrap;
+        overflow-x: auto;
+      }
       .card-text,
       .see-more {
         font-size: 8px;
@@ -193,7 +197,6 @@
                 <span class="R_category">한식</span
                 ><span class="R_category">국물</span
                 ><span class="R_category">매운거</span>
-                <a href="#" class="see-more">... </a>
               </p>
             </div>
           </div>
@@ -219,7 +222,6 @@
                 <span class="R_category">매운거</span>
                 <span class="R_category">매운거</span>
                 <span class="R_category">매운거</span>
-                <a href="#" class="see-more">...</a>
               </p>
             </div>
           </div>
@@ -432,95 +434,6 @@
         </div>
 
         <!-- ==================================카드 하나=========================================== -->
-        <div class="col-12">
-          <div class="card border">
-            <a href="R_result.html">
-              <img
-                src="https://recipe1.ezmember.co.kr/cache/recipe/2015/08/25/a01d013a6b6f9d526c43f4659db2cd61.jpg"
-                class="card-img-top"
-                alt="..."
-              />
-            </a>
-            <div class="card-body">
-              <h5 class="card-title">돼지고기 김치찌개</h5>
-              <p class="card-text text-muted small">
-                <span class="R_category">한식</span
-                ><span class="R_category">국물</span
-                ><span class="R_category">매운거</span>
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- ==================================카드 하나=========================================== -->
-        <div class="col-12">
-          <div class="card border">
-            <a href="R_result.html">
-              <img
-                src="https://recipe1.ezmember.co.kr/cache/recipe/2015/08/25/a01d013a6b6f9d526c43f4659db2cd61.jpg"
-                class="card-img-top"
-                alt="..."
-              />
-            </a>
-            <div class="card-body">
-              <h5 class="card-title">돼지고기 김치찌개</h5>
-              <p class="card-text text-muted small">
-                <span class="R_category">한식</span
-                ><span class="R_category">국물</span
-                ><span class="R_category">매운거</span>
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- ==================================카드 하나=========================================== -->
-        <div class="col-12">
-          <div class="card border">
-            <a href="R_result.html">
-              <img
-                src="https://recipe1.ezmember.co.kr/cache/recipe/2015/08/25/a01d013a6b6f9d526c43f4659db2cd61.jpg"
-                class="card-img-top"
-                alt="..."
-              />
-            </a>
-            <div class="card-body">
-              <h5 class="card-title">돼지고기 김치찌개</h5>
-              <p class="card-text text-muted small">
-                <span class="R_category">한식</span
-                ><span class="R_category">국물</span
-                ><span class="R_category">매운거</span>
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- ==================================카드 하나=========================================== -->
-        <div class="col-12">
-          <div class="card border">
-            <a href="R_result.html">
-              <img src="img/food1.jpg" class="card-img-top" alt="..." />
-            </a>
-            <div class="card-body">
-              <h5 class="card-title">돼지고기 김치찌개</h5>
-              <p class="card-text text-muted small">
-                <span class="R_category">한식</span
-                ><span class="R_category">국물</span
-                ><span class="R_category">매운거</span>
-                <span class="R_category">매운거</span>
-                <span class="R_category">매운거</span>
-                <span class="R_category">매운거</span>
-                <span class="R_category">매운거</span>
-                <span class="R_category">매운거</span>
-                <span class="R_category">매운거</span>
-                <span class="R_category">매운거</span>
-                <span class="R_category">매운거</span>
-                <a href="#" class="see-more">...</a>
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- ==================================카드 하나=========================================== -->
       </div>
 
       <div class="row btnDiv">
@@ -560,7 +473,7 @@
         }
       });
     </script>
-    <script>
+    <!-- <script>
       $(document).ready(function () {
         $(".card-body").each(function () {
           var maxSpanCount = 3; // 최대 표시할 span 태그의 수
@@ -580,6 +493,6 @@
           $(this).text(isVisible ? "접기" : "..."); // 버튼 텍스트 토글
         });
       });
-    </script>
+    </script> -->
   </body>
 </html>
