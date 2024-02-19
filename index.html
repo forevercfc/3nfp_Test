@@ -190,14 +190,31 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      padding: 10px;
+            
+    }
+    .main::before{
+      content: "";
+      background-color: rgb(255, 216, 216);
+      opacity: 0.5;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      border-radius: 20px;
     }
     .main p{
-      font-size: 40px;
+      font-size: 20px;
       margin-bottom: 30px;
-      font-family: "Dongle", sans-serif;
-      font-weight: 400;
+      font-family: "Bangers", system-ui;
+      font-weight: bold;
       font-style: normal;
-      color: rgb(71, 64, 64);
+      color: rgb(0, 0, 0);
+      z-index: 5;
+    }
+    .main a{
+      z-index: 5;
     }
 
     .choiceBtn, .TopChoiceBtn {
@@ -208,7 +225,9 @@
       font-weight: bold;
       color: white;
       border: none;
+      z-index: 6;
     }
+
     .choiceBtn:hover, .TopChoiceBtn:hover{
       background-color: #f59292;
       border: 2px solid #f74b4b;;
@@ -276,8 +295,9 @@
       margin-bottom: 10px;
     }
     .main p{
-      font-size: 25px;
+      font-size: 17px;
       margin-bottom: 50px;
+      font-weight: bold;
     }
 
     }
@@ -402,7 +422,7 @@
                 >
               </h5>
 
-            <p>무엇을 볼지 결정하지 못한 분들을 위해<br />
+            <p>
             키워드를 따라 오늘의 볼거리를 추천 해드립니다
           </p>
 
@@ -419,7 +439,6 @@
                 <div class="col-12 main">
           <h5 class="card-title card-title_food">FOOD</h5>
           <p>
-            무엇을 먹어야 할지 결정하지 못한 분들을 위해<br />
             키워드를 따라 오늘의 메뉴를 추천 해드립니다
           </p>
 
