@@ -150,14 +150,17 @@
       z-index: 5;
     }
     /* 메인 제목 */
-    .card-title_main{
+    /* .card-title_main{
       font-size: 9vw;
       letter-spacing: 15px;
       text-shadow: 5px 5px rgb(156, 148, 148);
       color: #f74b4b;
       position: relative;
-    }
+    } */
 
+    .chooget{
+      display: flex;
+    }
 
     h1 span {
   position: relative;
@@ -179,13 +182,13 @@
                0 10px 10px rgba(0, 0, 0, .4);
 }
 
-h1 span:nth-child(2) { animation-delay: .1s; }
-h1 span:nth-child(3) { animation-delay: .1s; }
-h1 span:nth-child(4) { animation-delay: .1s; }
-h1 span:nth-child(5) { animation-delay: .2s; }
-h1 span:nth-child(6) { animation-delay: .2s; }
-h1 span:nth-child(7) { animation-delay: .2s; }
-h1 span:nth-child(8) { animation-delay: .2s; }
+h1 span:nth-child(2) { animation-delay: .0s; }
+h1 span:nth-child(3) { animation-delay: .0s; }
+h1 span:nth-child(4) { animation-delay: .0s; }
+h1 span:nth-child(5) { animation-delay: .1s; }
+h1 span:nth-child(6) { animation-delay: .1s; }
+h1 span:nth-child(7) { animation-delay: .1s; }
+h1 span:nth-child(8) { animation-delay: .1s; }
 
 @keyframes bounce {
   100% {
@@ -305,9 +308,9 @@ h1 span:nth-child(8) { animation-delay: .2s; }
       
 
       /* 메인 제목 */
-    .card-title{
-      font-size: 20vw;
-      letter-spacing: 5px;
+      h1 span, .card-title{
+      font-size: 15vw;
+      white-space:nowrap;
     }
 
     /* 네비게이션 */
@@ -319,7 +322,7 @@ h1 span:nth-child(8) { animation-delay: .2s; }
       display: flex;
       align-items: center;
       z-index: 99999;
-      height: 100px;
+      height: 50px;
     }
     .pc_nav{
       display: none;
@@ -445,7 +448,7 @@ h1 span:nth-child(8) { animation-delay: .2s; }
 
           <div class="col-12 main">
             <h5 class="card-title card-title_main">
-               <h1>
+               <h1 class="chooget">
                   <span>C</span>
                   <span>H</span>
                   <span>O</span>
