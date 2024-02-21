@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>먹거리 카테고리 버튼</title>
+     <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+    />
+  </head>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
+    *,
+    *:after,
+    *:before {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Inter", sans-serif;
+      line-height: 1.5;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #f8f8f9;
+      flex-direction: column;
+    }
+
+    .checkbox-group {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 600px;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+    .checkbox-group > * {
+      margin: 0.5rem 0.5rem;
+    }
+
+    .checkbox-group-legend {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #9c9c9c;
+      text-align: center;
+      line-height: 1.125;
+      margin-bottom: 1.25rem;
+    }
+
+    .checkbox-input {
+      clip: rect(0 0 0 0);
+      -webkit-clip-path: inset(100%);
+      clip-path: inset(100%);
+      height: 1px;
+      overflow: hidden;
+      position: absolute;
+      white-space: nowrap;
+      width: 1px;
+    }
+    .checkbox-input:checked + .checkbox-tile {
+      border-color: #f74b4b;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+      color: #f74b4b;
+    }
+    .checkbox-input:checked + .checkbox-tile:before {
+      transform: scale(1);
+      opacity: 1;
+      background-color: #f74b4b;
+      border-color: #f74b4b;
+    }
+    .checkbox-input:checked + .checkbox-tile .checkbox-icon,
+    .checkbox-input:checked + .checkbox-tile .checkbox-label {
+      color: #f74b4b;
+    }
+    .checkbox-input:focus + .checkbox-tile {
+      border-color: #f74b4b;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1), 0 0 0 4px #e7cece;
+    }
+    .checkbox-input:focus + .checkbox-tile:before {
+      transform: scale(1);
+      opacity: 1;
+    }
+
+    .checkbox-tile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 7rem;
+      min-height: 7rem;
+      border-radius: 0.5rem;
+      border: 2px solid #b5bfd9;
+      background-color: #fff;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+      transition: 0.15s ease;
+      cursor: pointer;
+      position: relative;
+    }
+    .checkbox-tile:before {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 1.25rem;
+      height: 1.25rem;
+      border: 2px solid #b5bfd9;
+      background-color: #fff;
+      border-radius: 50%;
+      top: 0.25rem;
+      left: 0.25rem;
+      opacity: 0;
+      transform: scale(0);
+      transition: 0.25s ease;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='192' height='192' fill='%23FFFFFF' viewBox='0 0 256 256'%3E%3Crect width='256' height='256' fill='none'%3E%3C/rect%3E%3Cpolyline points='216 72.005 104 184 48 128.005' fill='none' stroke='%23FFFFFF' stroke-linecap='round' stroke-linejoin='round' stroke-width='32'%3E%3C/polyline%3E%3C/svg%3E");
+      background-size: 12px;
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+    }
+    .checkbox-tile:hover {
+      border-color: #f74b4b;
+      color: #f74b4b;
+    }
+    .checkbox-tile:hover:before {
+      transform: scale(1);
+      opacity: 1;
+    }
+
+    .checkbox-icon {
+      transition: 0.375s ease;
+      color: #494949;
+    }
+    .checkbox-icon svg {
+      width: 3rem;
+      height: 3rem;
+    }
+
+    .checkbox-label {
+      color: #707070;
+      transition: 0.375s ease;
+      text-align: center;
+    }
+    .submit {
+        overflow: visible;
+        margin: 30px 0;
+        padding: 0;
+        border: 0;
+        background: transparent;
+        font: inherit;
+        font-weight: bold;
+        line-height: normal;
+        cursor: pointer;
+        display: block;
+        text-decoration: none;
+        text-transform: uppercase;
+        padding: 16px 36px 22px;
+        background-color: #ffffff;
+        color: #f74b4b;
+        border: 2px solid #f74b4b;
+        border-radius: 6px;
+        margin-bottom: 16px;
+        transition: all 0.5s ease;
+    }
+  </style>
+  </head>
+  <body>
+   <fieldset class="checkbox-group" id="categorySet1">
+      <legend class="checkbox-group-legend">Choose your favorites</legend>
+      <label class="checkbox-wrapper">
+        <input type="checkbox" class="checkbox-input" id="btnCheckbox1" />
+        <span class="checkbox-tile">
+          <span class="checkbox-label">한식</span>
+        </span>
+      </label>
+      <label class="checkbox-wrapper">
+        <input type="checkbox" class="checkbox-input" id="btnCheckbox2" />
+        <span class="checkbox-tile">
+          <span class="checkbox-label">양식</span>
+        </span>
+      </label>
+          <label class="checkbox-wrapper">
+        <input type="checkbox" class="checkbox-input" id="btnCheckbox3" />
+        <span class="checkbox-tile">
+          <span class="checkbox-label">중식</span>
+        </span>
+      </label>
+          <label class="checkbox-wrapper">
+        <input type="checkbox" class="checkbox-input" id="btnCheckbox4" />
+        <span class="checkbox-tile">
+          <span class="checkbox-label">일식</span>
+        </span>
+      </label>
+          <label class="checkbox-wrapper">
+        <input type="checkbox" class="checkbox-input" id="btnCheckbox5" />
+        <span class="checkbox-tile">
+          <span class="checkbox-label">기타</span>
+        </span>
+      </label>
+          <label class="checkbox-wrapper">
+        <input type="checkbox" class="checkbox-input" id="btnCheckbox" />
+        <span class="checkbox-tile">
+          <span class="checkbox-label">디저트</span>
+        </span>
+      </label>
+    </fieldset>
+    <button id="nextButton" class="submit">다음</button>
+    <div id="selectedCategories" style="display: none"></div>
+    <a id="resultLink" href="R_list.html" class="submit" style="display: none;">결과보러가기</a>
+
+    
+
+   <script>
+      let currentStep = 1;
+      let selectedCategories = []; // 사용자의 선택을 저장할 배열
+
+      document.getElementById("nextButton").addEventListener("click", function () {
+        collectSelectedCategories(); // 현재 단계의 선택 사항을 배열에 저장
+
+        if (currentStep === 1) {
+          createCategorySet(["밥", "빵", "면", "고기", "해산물", "채소,야채"], "categorySet2");
+        } else if (currentStep === 2) {
+          createCategorySet(["국물 있음", "국물 없음"], "categorySet3");
+        } else if (currentStep === 3) {
+          createCategorySet(["매움", "안 매움"], "categorySet4");
+        } else if (currentStep === 4) {
+          this.style.display = "none"; // '다음' 버튼 숨김
+          displaySelectedCategories(); // 최종 선택 요약을 표시
+        }
+
+        currentStep++;
+      });
+
+      function collectSelectedCategories() {
+        const checkboxes = document.querySelectorAll(`#categorySet${currentStep} .checkbox-input:checked`);
+        checkboxes.forEach((checkbox) => {
+          selectedCategories.push(checkbox.nextElementSibling.textContent.trim());
+        });
+        // 현재 세트를 숨김
+        document.getElementById(`categorySet${currentStep}`).style.display = "none";
+      }
+
+      function createCategorySet(categories, setId) {
+        // 이전 세트 제거
+        const existingSet = document.getElementById(setId);
+        if (existingSet) {
+          existingSet.remove();
+        }
+
+        // 새 세트 생성
+        const categorySet = document.createElement("fieldset");
+        categorySet.className = "checkbox-group";
+        categorySet.id = setId;
+
+        categories.forEach((category, index) => {
+          const label = document.createElement("label");
+          label.className = "checkbox-wrapper";
+
+          const input = document.createElement("input");
+          input.type = "checkbox";
+          input.className = "checkbox-input";
+          input.id = `${setId}-${index}`;
+
+          const spanTile = document.createElement("span");
+          spanTile.className = "checkbox-tile";
+
+          const spanLabel = document.createElement("span");
+          spanLabel.className = "checkbox-label";
+          spanLabel.textContent = category;
+
+          spanTile.appendChild(spanLabel);
+          label.appendChild(input);
+          label.appendChild(spanTile);
+          categorySet.appendChild(label);
+        });
+
+        document.body.insertBefore(categorySet, document.getElementById("nextButton"));
+      }
+
+       // 스크립트 로직은 이전과 동일
+      function displaySelectedCategories() {
+        const summaryDiv = document.getElementById("selectedCategories");
+        summaryDiv.innerHTML = `<h2>선택한 카테고리:</h2> ${selectedCategories.join(", ")}`;
+        summaryDiv.style.display = "block";
+
+        // 결과 링크 표시
+        const resultLink = document.getElementById("resultLink");
+        resultLink.style.display = "inline-block"; 
+
+      }
+    </script>
+  </body>
+</html>

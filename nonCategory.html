@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>볼거리 카테고리 버튼</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+    />
+    <style>
+      @-webkit-keyframes stripe-slide {
+        0% {
+          background-position: 0% 0;
+        }
+        100% {
+          background-position: 100% 0;
+        }
+      }
+      @keyframes stripe-slide {
+        0% {
+          background-position: 0% 0;
+        }
+        100% {
+          background-position: 100% 0;
+        }
+      }
+      body {
+        background-color: bisque;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        font-family: sans-serif;
+      }
+      .btn {
+        text-align: center;
+        overflow: visible;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        background: transparent;
+        font: inherit;
+        line-height: normal;
+        cursor: pointer;
+        display: block;
+        text-decoration: none;
+        text-transform: uppercase;
+        padding: 16px 36px 22px;
+        background-color: #fff;
+        color: #f74b4b;
+        border: 2px solid #f74b4b;
+        border-radius: 6px;
+        margin-bottom: 16px;
+        transition: all 0.5s ease;
+      }
+      .btn--stripe {
+        overflow: hidden;
+        position: relative;
+      }
+      .btn--stripe:after {
+        content: "";
+        display: block;
+        height: 7px;
+        width: 100%;
+        background-image: repeating-linear-gradient(
+          45deg,
+          #f74b4b,
+          #f74b4b 1px,
+          transparent 2px,
+          transparent 5px
+        );
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        border-top: 1px solid #f74b4b;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        background-size: 7px 7px;
+      }
+      .btn--large {
+        width: 50%;
+      }
+      .btn--radius {
+        border-radius: 36px;
+      }
+
+      .checkbox-btn {
+        display: none; /* 실제 체크박스 숨기기 */
+      }
+
+      .checkbox-btn + label {
+        cursor: pointer;
+        /* btn 클래스 스타일을 여기에 복사 */
+        overflow: visible;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        background: transparent;
+        font: inherit;
+        font-weight: bold;
+        line-height: normal;
+        display: block;
+        text-decoration: none;
+        text-transform: uppercase;
+        padding: 16px 36px 22px;
+        background-color: #fff;
+        color: #f74b4b;
+        border: 2px solid #f74b4b;
+        border-radius: 6px;
+        margin-bottom: 16px;
+        transition: all 0.5s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .checkbox-btn:checked + label {
+        background-color: #666;
+        color: #fff;
+        border-color: #000;
+      }
+
+      .checkbox-btn:checked + label:after {
+        content: "";
+        display: block;
+        height: 7px;
+        width: 100%;
+        background-image: repeating-linear-gradient(
+          45deg,
+          #fff,
+          #fff 1px,
+          transparent 2px,
+          transparent 5px
+        );
+        border-top: 1px solid #000;
+        -webkit-animation: stripe-slide 12s infinite linear forwards;
+        animation: stripe-slide 12s infinite linear forwards;
+        background-size: 7px 7px;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+      }
+
+      .submit {
+        overflow: visible;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        background: transparent;
+        font: inherit;
+        line-height: normal;
+        cursor: pointer;
+        display: block;
+        text-decoration: none;
+        text-transform: uppercase;
+        padding: 16px 36px 22px;
+        background-color: #fff;
+        color: #4c8fe7;
+        border: 2px solid #4c8fe7;
+        border-radius: 6px;
+        margin-bottom: 16px;
+        transition: all 0.5s ease;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="categorySet1">
+      <input type="checkbox" id="btnCheckbox1" class="checkbox-btn" />
+      <label for="btnCheckbox1" class="btn btn--stripe">영화 보기</label>
+      <input type="checkbox" id="btnCheckbox2" class="checkbox-btn" />
+      <label for="btnCheckbox2" class="btn btn--stripe">공연 보기</label>
+    </div>
+    <button id="nextButton" class="submit">다음</button>
+    <div id="selectedCategories" style="display: none"></div>
+
+    <script>
+      let currentStep = 1;
+      let selectedCategories = []; // 사용자의 선택을 저장할 배열
+
+      document
+        .getElementById("nextButton")
+        .addEventListener("click", function () {
+          let nextSetCategories = [];
+          const selectedOption = collectSelectedCategories(
+            "categorySet" + currentStep
+          ); // 현재 단계의 선택 사항을 배열에 저장
+
+          if (currentStep === 1) {
+            if (selectedOption.includes("영화 보기")) {
+              nextSetCategories = ["국내 영화", "해외 영화"];
+            } else if (selectedOption.includes("공연 보기")) {
+              nextSetCategories = ["뮤지컬", "콘서트", "연극", "무용"];
+            }
+            createCategorySet(nextSetCategories, "categorySet2");
+          } else if (
+            currentStep === 2 &&
+            selectedCategories.includes("영화 보기")
+          ) {
+            createCategorySet(
+              ["드라마", "로맨스/멜로", "액션", "스릴러", "다큐멘터리"],
+              "categorySet3"
+            );
+          } else if (
+            currentStep === 2 &&
+            selectedCategories.includes("공연 보기")
+          ) {
+            createCategorySet(
+              ["클래식", "재즈", "K-POP", "인디"],
+              "categorySet3"
+            );
+          } else if (currentStep === 3) {
+            this.style.display = "none"; // '다음' 버튼 숨김
+            displaySelectedCategories(); // 최종 선택 요약을 표시
+          }
+
+          currentStep++;
+        });
+
+      function createCategorySet(categories, setId) {
+        const categorySet = document.createElement("div");
+        categorySet.id = setId;
+        categories.forEach((category, index) => {
+          const checkbox = document.createElement("input");
+          checkbox.type = "checkbox";
+          checkbox.id = setId + index;
+          checkbox.className = "checkbox-btn";
+
+          const label = document.createElement("label");
+          label.setAttribute("for", setId + index);
+          label.className = "btn btn--stripe";
+          label.textContent = category;
+
+          categorySet.appendChild(checkbox);
+          categorySet.appendChild(label);
+        });
+
+        document.body.insertBefore(
+          categorySet,
+          document.getElementById("nextButton")
+        );
+      }
+
+      function collectSelectedCategories(setId) {
+        const categorySet = document.getElementById(setId);
+        let selectedOptions = [];
+        if (categorySet) {
+          const checkboxes = categorySet.querySelectorAll(
+            'input[type="checkbox"]:checked'
+          );
+          checkboxes.forEach((checkbox) => {
+            selectedOptions.push(
+              checkbox.nextElementSibling.textContent.trim()
+            );
+            selectedCategories.push(
+              checkbox.nextElementSibling.textContent.trim()
+            );
+          });
+
+          categorySet.style.display = "none"; // 현재 카테고리 세트 숨김
+        }
+        return selectedOptions;
+      }
+
+      function displaySelectedCategories() {
+        const summaryDiv = document.createElement("div");
+        summaryDiv.innerHTML =
+          "<h2>선택한 카테고리:</h2>" + selectedCategories.join(", ");
+        document.body.appendChild(summaryDiv);
+      }
+    </script>
+  </body>
+</html>
