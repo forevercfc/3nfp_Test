@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Create CgProduct</title>
+<style>
+    textarea {
+        width: 50%;
+        height: 300px;
+    }
+</style>
+<script>
+    function confirmSubmit() {
+        var confirmMessage = "상품을 등록하시겠습니까?";
+        return confirm(confirmMessage);
+    }
+</script>
+</head>
+<body>
+    <h2>Create CgProduct</h2>
+    <form th:action="@{/cgproducts}" th:object="${cgProduct}" method="post" onsubmit="return confirmSubmit()">
+        <div>
+            <label for="p_Code">P_CODE(제품 코드 6자리): </label>
+            <input type="text" id="p_Code" name="p_Code" th:value="*{p_Code}" required>
+        </div>
+        <div>
+            <label for="p_Name">P_NAME(제품명): </label>
+            <input type="text" id="p_Name" name="p_Name" th:value="*{p_Name}" required>
+        </div>
+        <div>
+            <label for="p_Category">P_CATEGORY(카테고리): </label>
+            <select id="p_Category" name="p_Category" required>
+                <option value="A" th:selected="*{p_Category} == 'A'">A(야채/채소)</option>
+                <option value="B" th:selected="*{p_Category} == 'B'">B(축산/계란)</option>
+                <option value="C" th:selected="*{p_Category} == 'C'">C(수산/건어물)</option>
+                <option value="D" th:selected="*{p_Category} == 'D'">D(소스/양념/조미료)</option>
+                <option value="E" th:selected="*{p_Category} == 'E'">E(신선가공식품)</option>
+            </select>
+        </div>
+        <div>
+            <label for="p_Price">P_PRICE(가격): </label>
+            <input type="number" id="p_Price" name="p_Price" th:value="*{p_Price}" required>
+        </div>
+        <div>
+            <label for="p_Stock">P_STOCK(재고): </label>
+            <input type="number" id="p_Stock" name="p_Stock" th:value="*{p_Stock}" required>
+        </div>
+        <div>
+            <label for="p_Image">P_IMAGE(이미지 URL): </label>
+            <input type="text" id="p_Image" name="p_Image" th:value="*{p_Image}">
+        </div>
+        <div>
+            <label for="p_Content">P_CONTENT(제품 설명): </label>
+            <textarea id="p_Content" name="p_Content" th:text="*{p_Content}"></textarea>
+        </div>
+        <div>
+            <label for="p_Dc_Yn">P_DC_YN(할인 여부 Y/N): </label>
+            <select id="p_Dc_Yn" name="p_Dc_Yn" required>
+                <option value="Y" th:selected="*{p_Dc_Yn} == 'Y'">Y(예)</option>
+                <option value="N" th:selected="*{p_Dc_Yn} == 'N'">N(아니오)</option>
+            </select>
+        </div>
+        <div>
+            <label for="p_Dc_Percent">P_DC_PERCENT(할인율 %): </label>
+            <input type="number" id="p_Dc_Percent" name="p_Dc_Percent" th:value="*{p_Dc_Percent}">
+        </div>
+        <div>
+            <button type="submit">등록</button>
+        </div>
+    </form>
+</body>
+</html>

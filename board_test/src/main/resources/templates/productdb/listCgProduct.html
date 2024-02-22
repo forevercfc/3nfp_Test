@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>List of CgProducts</title>
+    <style>
+        img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <h2>List of CgProducts</h2>
+    <button><a th:href="@{/cgproducts/new}" class="btn btn-primary">제품 등록</a></button>
+    <hr>
+
+    <!-- 카테고리 선택 폼 추가 -->
+    <form th:action="@{/cgproducts}" method="get">
+        <select name="category">
+            <option value="">모든 카테고리</option>
+            <option value="야채/채소">야채/채소</option>
+            <option value="축산/계란">축산/계란</option>
+            <option value="수산/건어물">수산/건어물</option>
+            <option value="소스/양념/조미료">소스/양념/조미료</option>
+            <option value="곡류/견과류">곡류/견과류</option>
+            <option value="가공식품">가공식품</option>
+            <option value="유제품">유제품</option>
+            <option value="과일류">과일류</option>
+        </select>
+        <button type="submit">필터</button>
+    </form>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>P_CODE</th>
+                <th>P_NAME</th>
+                <th>P_CATEGORY</th>
+                <th>P_PRICE</th>
+                <th>P_STOCK</th>
+                <th>P_IMAGE</th>
+                <th>P_CONTENT</th>
+                <th>P_DC_YN</th>
+                <th>P_DC_PERCENT</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="cgProduct : ${cgProducts}">
+                <td th:text="${cgProduct.p_Code}"></td>
+                <td th:text="${cgProduct.p_Name}"></td>
+                <td th:text="${cgProduct.p_Category}"></td>
+                <td th:text="${cgProduct.p_Price}"></td>
+                <td th:text="${cgProduct.p_Stock}"></td>
+                <td><img th:src="@{${cgProduct.p_Image}}" alt="Product Image" /></td>
+                <td th:text="${cgProduct.p_Content}"></td>
+                <td th:text="${cgProduct.p_Dc_Yn}"></td>
+                <td th:text="${cgProduct.p_Dc_Percent}"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

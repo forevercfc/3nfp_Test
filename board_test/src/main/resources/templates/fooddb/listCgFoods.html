@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>List of CgFoods</title>
+</head>
+<style>
+img {
+	width: 300px;
+	height: 200px;
+}
+</style>
+<body>
+	<h2>List of CgFoods</h2>
+	<button>	<a th:href="@{/cgfoods/new}" class="btn btn-primary">먹거리 등록</a></button>
+	<hr>
+	<table border="1">
+		<thead>
+			<tr>
+				<th>F_CODE</th>
+				<th>F_NAME</th>
+				<th>F_IMAGE</th>
+				<th>P_CODE_ARR</th>
+				<th>F_VOLUME_ARR</th>
+				<th>F_RECIPE</th>
+				<th>F_TYPE_THEME</th>
+				<th>F_TYPE_MAIN</th>
+				<th>F_TYPE_SOUP</th>
+				<th>F_TYPE_SPICY</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="cgFood : ${cgFoods}">
+				<td th:text="${cgFood.f_Code}"></td>
+				<td th:text="${cgFood.f_Name}"></td>
+				<td><img th:src="@{${cgFood.f_Image}}" alt="Food Image" /></td>
+
+				<td th:text="${cgFood.p_Code_Arr}"></td>
+				<td th:text="${cgFood.f_Volume_Arr}"></td>
+				<td th:text="${cgFood.f_Recipe}"></td>
+				<td th:text="${cgFood.f_Type_Theme}"></td>
+				<td th:text="${cgFood.f_Type_Main}"></td>
+				<td th:text="${cgFood.f_Type_Soup}"></td>
+				<td th:text="${cgFood.f_Type_Spicy}"></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>

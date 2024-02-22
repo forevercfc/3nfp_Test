@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>게시글 상세보기</title>
+</head>
+<body>
+	<h1>내용보기</h1>
+	<hr>
+	작성자 :
+	<span th:text="${dto.writer}"></span>
+	<br> 제목 :
+	<span th:text="${dto.title}"></span>
+	<br> 내용 :
+	<span th:text="${dto.content}"></span>
+	<br>
+	<br>
+	<p>
+		<a th:href="@{/list}">목록 바로가기</a>
+	</p>
+	<button class="btn btn-sm bg-dark text-white">
+		<a th:href="@{/updateForm(id=${dto.id})}">수정</a>
+	</button>
+	<button class="btn btn-sm bg-dark text-white">
+		<a th:href="@{/delete(id=${dto.id})}"
+			class="text-white text-decoration-none">삭제</a>
+	</button>
+</body>
+</html>

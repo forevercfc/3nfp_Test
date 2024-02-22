@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Create CgFood</title>
+<style>
+	textarea{
+	width:50%;
+	height:300px;}
+</style>
+<script>
+        function confirmSubmit() {
+            var confirmMessage = "상품을 등록하시겠습니까?";
+            return confirm(confirmMessage);
+        }
+    </script>
+</head>
+<body>
+	<h2>Create CgFood</h2>
+	<form th:action="@{/cgfoods}" th:object="${cgFood}" method="post"
+		onsubmit="return confirmSubmit()">
+		<div>
+			<label for="f_Code">F_CODE(음식코드 6자리): </label> <input type="text"
+				id="f_Code" name="f_Code" th:value="*{f_Code}" required>
+		</div>
+		<div>
+			<label for="f_Name">F_NAME(음식명): </label> <input type="text"
+				id="f_Name" name="f_Name" th:value="*{f_Name}" required>
+		</div>
+		<div>
+			<label for="f_Image">F_IMAGE(사진): </label> <input type="text"
+				id="f_Image" name="f_Image" th:value="*{f_Image}">
+		</div>
+		<div>
+			<label for="p_Code_Arr">P_CODE_ARR(재료코드): </label> <input type="text"
+				id="p_Code_Arr" name="p_Code_Arr" th:value="*{p_Code_Arr}">
+		</div>
+		<div>
+			<label for="f_Volume_Arr">F_VOLUME_ARR(용량내용): </label> <input
+				type="text" id="f_Volume_Arr" name="f_Volume_Arr"
+				th:value="*{f_Volume_Arr}">
+		</div>
+		<div>
+			<label for="f_Recipe">F_RECIPE(레시피 내용): </label>
+			<textarea id="f_Recipe" name="f_Recipe" th:text="*{f_Recipe}"></textarea>
+		</div>
+		<div>
+			<div>
+				<label for="f_Type_Theme">F_TYPE_THEME(테마별 (K, U, C, J, E,
+					D)): </label> <select id="f_Type_Theme" name="f_Type_Theme" required>
+					<option value="K" th:selected="*{f_Type_Theme} == 'K'">K(한식)</option>
+					<option value="U" th:selected="*{f_Type_Theme} == 'U'">U(양식)</option>
+					<option value="C" th:selected="*{f_Type_Theme} == 'C'">C(중식)</option>
+					<option value="J" th:selected="*{f_Type_Theme} == 'J'">J(일식)</option>
+					<option value="E" th:selected="*{f_Type_Theme} == 'E'">E(기타)</option>
+					<option value="D" th:selected="*{f_Type_Theme} == 'D'">D(디저트)</option>
+				</select>
+			</div>
+
+		</div>
+		<div>
+			<label for="f_Type_Main">F_TYPE_MAIN(주 재료 (R, B, N, M, S,
+				V)): </label> <select id="f_Type_Main" name="f_Type_Main" required>
+				<option value="R" th:selected="*{f_Type_Main} == 'R'">R(밥)</option>
+				<option value="B" th:selected="*{f_Type_Main} == 'B'">B(빵)</option>
+				<option value="N" th:selected="*{f_Type_Main} == 'N'">N(면)</option>
+				<option value="M" th:selected="*{f_Type_Main} == 'M'">M(고기)</option>
+				<option value="S" th:selected="*{f_Type_Main} == 'S'">S(해산물)</option>
+				<option value="V" th:selected="*{f_Type_Main} == 'V'">V(채소야채)</option>
+			</select>
+		</div>
+		<div>
+			<label for="f_Type_Soup">F_TYPE_SOUP(국물 여부 (Y, N)): </label> <select
+				id="f_Type_Soup" name="f_Type_Soup" required>
+				<option value="Y" th:selected="*{f_Type_Soup} == 'Y'">Y(있음)</option>
+				<option value="N" th:selected="*{f_Type_Soup} == 'N'">N(없음)</option>
+			</select>
+		</div>
+		<div>
+			<label for="f_Type_Spicy">F_TYPE_SPICY(매운거 여부 (Y, N)): </label> <select
+				id="f_Type_Spicy" name="f_Type_Spicy" required>
+				<option value="Y" th:selected="*{f_Type_Spicy} == 'Y'">Y(있음)</option>
+				<option value="N" th:selected="*{f_Type_Spicy} == 'N'">N(없음)</option>
+			</select>
+		</div>
+		<div>
+			<button type="submit">등록</button>
+		</div>
+	</form>
+</body>
+</html>
+
+</body>
+</html>
