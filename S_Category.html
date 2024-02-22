@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>먹거리 카테고리 버튼</title>
+    <title>영화 카테고리 버튼</title>
      <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
@@ -92,8 +92,8 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-       width: 10rem;
-      min-height: 10rem; 
+      width: 10rem;
+      min-height: 10rem;
       border-radius: 0.5rem;
       border: 2px solid #b5bfd9;
       background-color: #fff;
@@ -101,7 +101,6 @@
       transition: 0.15s ease;
       cursor: pointer;
       position: relative;
-      /* padding: 10px 10px 10px 30px; */
     }
     .checkbox-tile:before {
       content: "";
@@ -173,95 +172,107 @@
   <body>
    <fieldset class="checkbox-group" id="categorySet1">
       <legend class="checkbox-group-legend">Choose your favorites</legend>
-      <label class="checkbox-wrapper">
-        <input type="checkbox" class="checkbox-input select-all" id="selectAll-categorySet1" />
-        <span class="checkbox-tile">
-        <span class="checkbox-label">모두 선택</span>
-        </span>
-      </label>
-
+       <label class="checkbox-wrapper">
+  <input type="checkbox" class="checkbox-input" id="selectAll" />
+  <span class="checkbox-tile">
+    <span class="checkbox-label">모두 선택</span>
+  </span>
+</label>
       <label class="checkbox-wrapper">
         <input type="checkbox" class="checkbox-input" id="btnCheckbox1" />
         <span class="checkbox-tile">
-          <span class="checkbox-label">한식</span>
+          <span class="checkbox-label">서울</span>
         </span>
       </label>
       <label class="checkbox-wrapper">
         <input type="checkbox" class="checkbox-input" id="btnCheckbox2" />
         <span class="checkbox-tile">
-          <span class="checkbox-label">양식</span>
+          <span class="checkbox-label">인천</span>
         </span>
       </label>
-          <label class="checkbox-wrapper">
-        <input type="checkbox" class="checkbox-input" id="btnCheckbox3" />
+       <label class="checkbox-wrapper">
+        <input type="checkbox" class="checkbox-input" id="btnCheckbox2" />
         <span class="checkbox-tile">
-          <span class="checkbox-label">중식</span>
+          <span class="checkbox-label">부산</span>
         </span>
       </label>
-          <label class="checkbox-wrapper">
-        <input type="checkbox" class="checkbox-input" id="btnCheckbox4" />
+       <label class="checkbox-wrapper">
+        <input type="checkbox" class="checkbox-input" id="btnCheckbox2" />
         <span class="checkbox-tile">
-          <span class="checkbox-label">일식</span>
+          <span class="checkbox-label">대전</span>
         </span>
       </label>
-          <label class="checkbox-wrapper">
-        <input type="checkbox" class="checkbox-input" id="btnCheckbox5" />
+       <label class="checkbox-wrapper">
+        <input type="checkbox" class="checkbox-input" id="btnCheckbox2" />
         <span class="checkbox-tile">
-          <span class="checkbox-label">기타</span>
+          <span class="checkbox-label">광주</span>
         </span>
       </label>
-          <label class="checkbox-wrapper">
-        <input type="checkbox" class="checkbox-input" id="btnCheckbox" />
+       <label class="checkbox-wrapper">
+        <input type="checkbox" class="checkbox-input" id="btnCheckbox2" />
         <span class="checkbox-tile">
-          <span class="checkbox-label">디저트</span>
+          <span class="checkbox-label">대구</span>
         </span>
       </label>
+       <label class="checkbox-wrapper">
+        <input type="checkbox" class="checkbox-input" id="btnCheckbox2" />
+        <span class="checkbox-tile">
+          <span class="checkbox-label">울산</span>
+        </span>
+      </label>
+       <label class="checkbox-wrapper">
+        <input type="checkbox" class="checkbox-input" id="btnCheckbox2" />
+        <span class="checkbox-tile">
+          <span class="checkbox-label">제주</span>
+        </span>
+      </label>
+       <label class="checkbox-wrapper">
+        <input type="checkbox" class="checkbox-input" id="btnCheckbox2" />
+        <span class="checkbox-tile">
+          <span class="checkbox-label">세종</span>
+        </span>
+      </label>
+     
+         
     </fieldset>
     <button id="nextButton" class="submit">다음</button>
     <div id="selectedCategories" style="display: none"></div>
-    <a id="resultLink" href="R_list.html" class="submit" style="display: none;">결과보러가기</a>
+    <a id="resultLink" href="M_list.html" class="submit" style="display: none;">결과보러가기</a>
 
     
 
    <script>
-document.addEventListener('DOMContentLoaded', function() {
-    // 최초 화면의 "모두 선택"에 대한 리스너 추가
-    addSelectAllListener('selectAll-categorySet1');
-});
+  let currentStep = 1;
+  let selectedCategories = []; // 사용자의 선택을 저장할 배열
 
-let currentStep = 1;
-let selectedCategories = []; // 사용자의 선택을 저장할 배열
-
-document.getElementById("nextButton").addEventListener("click", function () {
+  document.getElementById("nextButton").addEventListener("click", function () {
     collectSelectedCategories(); // 현재 단계의 선택 사항을 배열에 저장
 
     if (currentStep === 1) {
-        createCategorySet(["밥", "빵", "면", "고기", "해산물", "채소"], "categorySet2");
+      createCategorySet(["연극", "무용", "대중무용", "클래식", "국악", "대중음악", "서커스/마술", "뮤지컬", "복합"], "categorySet2");
     } else if (currentStep === 2) {
-        createCategorySet(["국물있음", "국물없음"], "categorySet3");
-    } else if (currentStep === 3) {
-        createCategorySet(["매움", "안매움"], "categorySet4");
-    } else if (currentStep === 4) {
-        this.style.display = "none"; // '다음' 버튼 숨김
-        displaySelectedCategories(); // 최종 선택 요약을 표시
-    }
+      this.style.display = "none"; // '다음' 버튼 숨김
+      displaySelectedCategories(); // 최종 선택 요약을 표시
+    } 
 
     currentStep++;
-});
+  });
 
-function collectSelectedCategories() {
-    const checkboxes = document.querySelectorAll(`#categorySet${currentStep} .checkbox-input:checked:not(.select-all)`);
-    checkboxes.forEach((checkbox) => {
-        selectedCategories.push(checkbox.nextElementSibling.textContent.trim());
-    });
-    document.getElementById(`categorySet${currentStep}`).style.display = "none";
+  function collectSelectedCategories() {
+  // "모두 선택" 체크박스를 제외하고 선택된 체크박스만 수집합니다.
+  const checkboxes = document.querySelectorAll(`#categorySet${currentStep} .checkbox-input:checked:not([id*='selectAll'])`);
+  checkboxes.forEach((checkbox) => {
+    selectedCategories.push(checkbox.nextElementSibling.textContent.trim());
+  });
+  // 현재 세트를 숨김
+  document.getElementById(`categorySet${currentStep}`).style.display = "none";
 }
 
-function createCategorySet(categories, setId) {
+  function createCategorySet(categories, setId) {
     // 이전 세트 제거
     const existingSet = document.getElementById(setId);
     if (existingSet) {
-        existingSet.remove();
+      existingSet.remove();
     }
 
     // 새 세트 생성
@@ -269,65 +280,77 @@ function createCategorySet(categories, setId) {
     categorySet.className = "checkbox-group";
     categorySet.id = setId;
 
-    // "모두 선택" 체크박스를 각 세트의 시작 부분에 추가
+    // "모두 선택" 체크박스 생성 및 추가
     const selectAllWrapper = document.createElement("label");
     selectAllWrapper.className = "checkbox-wrapper";
     const selectAllInput = document.createElement("input");
     selectAllInput.type = "checkbox";
-    selectAllInput.className = "checkbox-input select-all";
-    selectAllInput.id = `selectAll-${setId}`; // 고유 ID 부여
+    selectAllInput.className = "checkbox-input";
+    selectAllInput.id = "selectAll" + setId; // 각 세트별 고유 ID
     const selectAllTile = document.createElement("span");
     selectAllTile.className = "checkbox-tile";
     const selectAllLabel = document.createElement("span");
     selectAllLabel.className = "checkbox-label";
     selectAllLabel.textContent = "모두 선택";
+
     selectAllTile.appendChild(selectAllLabel);
     selectAllWrapper.appendChild(selectAllInput);
     selectAllWrapper.appendChild(selectAllTile);
     categorySet.appendChild(selectAllWrapper);
 
     categories.forEach((category, index) => {
-        const label = document.createElement("label");
-        label.className = "checkbox-wrapper";
-        const input = document.createElement("input");
-        input.type = "checkbox";
-        input.className = "checkbox-input";
-        input.id = `${setId}-${index}`;
-        const spanTile = document.createElement("span");
-        spanTile.className = "checkbox-tile";
-        const spanLabel = document.createElement("span");
-        spanLabel.className = "checkbox-label";
-        spanLabel.textContent = category;
-        spanTile.appendChild(spanLabel);
-        label.appendChild(input);
-        label.appendChild(spanTile);
-        categorySet.appendChild(label);
+      const label = document.createElement("label");
+      label.className = "checkbox-wrapper";
+
+      const input = document.createElement("input");
+      input.type = "checkbox";
+      input.className = "checkbox-input";
+      input.id = `${setId}-${index}`;
+
+      const spanTile = document.createElement("span");
+      spanTile.className = "checkbox-tile";
+
+      const spanLabel = document.createElement("span");
+      spanLabel.className = "checkbox-label";
+      spanLabel.textContent = category;
+
+      spanTile.appendChild(spanLabel);
+      label.appendChild(input);
+      label.appendChild(spanTile);
+      categorySet.appendChild(label);
     });
 
     document.body.insertBefore(categorySet, document.getElementById("nextButton"));
-    addSelectAllListener(`selectAll-${setId}`);
-}
 
-function addSelectAllListener(selectAllId) {
-    const selectAllCheckbox = document.getElementById(selectAllId);
-    selectAllCheckbox.addEventListener('change', function() {
-        const setId = this.closest('.checkbox-group').id;
-        const isChecked = this.checked;
-        const checkboxes = document.querySelectorAll(`#${setId} .checkbox-input:not(.select-all)`);
-        checkboxes.forEach(checkbox => {
-            checkbox.checked = isChecked;
-        });
+    // "모두 선택" 체크박스 이벤트 리스너 설정
+    selectAllInput.addEventListener("change", function() {
+      const isChecked = this.checked;
+      const checkboxes = document.querySelectorAll(`#${setId} .checkbox-input:not(#${this.id})`);
+      checkboxes.forEach((checkbox) => {
+        checkbox.checked = isChecked;
+      });
     });
-}
+  }
 
-function displaySelectedCategories() {
+  function displaySelectedCategories() {
     const summaryDiv = document.getElementById("selectedCategories");
     summaryDiv.innerHTML = `<h2>선택한 카테고리:</h2> ${selectedCategories.join(", ")}`;
     summaryDiv.style.display = "block";
 
+    // 결과 링크 표시
     const resultLink = document.getElementById("resultLink");
     resultLink.style.display = "inline-block";
-}
+  }
+  document.addEventListener('change', function(e) {
+  if (e.target && e.target.className.includes('checkbox-input') && e.target.id.includes('selectAll')) {
+    const setId = e.target.closest('.checkbox-group').id;
+    const isChecked = e.target.checked;
+    const checkboxes = document.querySelectorAll(`#${setId} .checkbox-input:not([id*='selectAll'])`);
+    checkboxes.forEach((checkbox) => {
+      checkbox.checked = isChecked;
+    });
+  }
+});
 
 </script>
 

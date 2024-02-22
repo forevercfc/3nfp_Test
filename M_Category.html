@@ -2,9 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>볼거리 카테고리</title>
-
-    <link
+    <title>영화 카테고리 버튼</title>
+     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
     />
@@ -169,111 +168,121 @@
         transition: all 0.5s ease;
     }
   </style>
- <body>
-    <fieldset class="checkbox-group" id="categorySet1">
-      <legend class="checkbox-group-legend">Choose your favorites</legend>
-      <label class="checkbox-wrapper">
-        <input type="checkbox" class="checkbox-input" id="btnCheckbox1" />
-        <span class="checkbox-tile">
-          <span class="checkbox-label">영화보기</span>
-        </span>
-      </label>
-      <label class="checkbox-wrapper">
-        <input type="checkbox" class="checkbox-input" id="btnCheckbox2" />
-        <span class="checkbox-tile">
-          <span class="checkbox-label">공연보기</span>
-        </span>
-      </label>
-    </fieldset>
-    <button id="nextButton" class="submit">다음</button>
-    <div id="selectedCategories" style="display: none"></div>
-       <a id="resultLink" href="M_list.html" class="submit" style="display: none;">결과보러가기</a>
+  </head>
+  <body>
+ <fieldset class="checkbox-group" id="categorySet1">
+    <legend class="checkbox-group-legend">Choose your favorites</legend>
+    <label class="checkbox-wrapper">
+      <input type="checkbox" class="checkbox-input" id="btnCheckbox1" />
+      <span class="checkbox-tile">
+        <span class="checkbox-label">국내영화</span>
+      </span>
+    </label>
+    <label class="checkbox-wrapper">
+      <input type="checkbox" class="checkbox-input" id="btnCheckbox2" />
+      <span class="checkbox-tile">
+        <span class="checkbox-label">해외영화</span>
+      </span>
+    </label>
+  </fieldset>
+  
+  <button id="nextButton" class="submit">다음</button>
+  <div id="selectedCategories" style="display: none"></div>
+  <a id="resultLink" href="M_list.html" class="submit" style="display: none;">결과보러가기</a>
 
-       <script>
-        let currentStep = 1;
-        let selectedCategories = []; // 사용자의 선택을 저장할 배열
-      
-        document.getElementById("nextButton").addEventListener("click", function () {
-          const selectedOption = collectSelectedCategories("categorySet" + currentStep); // 현재 단계의 선택 사항을 배열에 저장
-      
-          if (currentStep === 1) {
-            if (selectedOption.includes("영화보기")) {
-              nextSetCategories = ["국내 영화", "해외 영화"];
-            } else if (selectedOption.includes("공연보기")) {
-              nextSetCategories = ["뮤지컬", "콘서트", "연극", "무용"];
-            }
-            createCategorySet(nextSetCategories, "categorySet2");
-          } else if (currentStep === 2 && selectedCategories.includes("영화보기")) {
-            createCategorySet(["드라마", "로맨스/멜로", "액션", "스릴러", "다큐멘터리"], "categorySet3");
-          } else if (currentStep === 2 && selectedCategories.includes("공연보기")) {
-            createCategorySet(["클래식", "재즈", "K-POP", "인디"], "categorySet3");
-          } else if (currentStep === 3) {
-            this.style.display = "none"; // '다음' 버튼 숨김
-            displaySelectedCategories(); // 최종 선택 요약을 표시
-          }
-      
-          currentStep++;
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      let currentStep = 1;
+      let selectedCategories = [];
+
+      document.getElementById("nextButton").addEventListener("click", function () {
+        collectSelectedCategories();
+
+        if (currentStep === 1) {
+          // 첫 번째 단계 이후로 '모두 선택' 체크박스를 포함하여 카테고리 세트를 생성
+          createCategorySet(["드라마", "로맨스/멜로", "첩보", "옴니버스", "뮤직", "로드무비", "하이틴", "청춘영화", "문예", "신파", "활극", "군사", "스포츠", "종교", "무협", "미스터리", "판타지/SF", "코메디", "느와르", "액션", "범죄", "어드벤처", "가족", "에로", "공포", "뮤지컬", "시대극/사극", "스릴러", "서부", "전쟁", "재난", "애니메이션", "역사"], "categorySet2", true);
+        } else if (currentStep === 2) {
+          createCategorySet(["올해의 영화", "2023년 영화", "2020~2029년 영화", "2010~2019년 영화", "2000년대 영화", "~1999년 영화"], "categorySet3", true);
+        } else if (currentStep === 3) {
+          this.style.display = "none";
+          displaySelectedCategories();
+        } 
+
+        currentStep++;
+      });
+
+      function collectSelectedCategories() {
+        const checkboxes = document.querySelectorAll(`#categorySet${currentStep} .checkbox-input:checked`);
+        checkboxes.forEach((checkbox) => {
+          selectedCategories.push(checkbox.nextElementSibling.textContent.trim());
         });
-      
-        function createCategorySet(categories, setId) {
-          const categorySet = document.createElement("fieldset");
-          categorySet.id = setId;
-          categorySet.className = "checkbox-group";
-          categories.forEach((category, index) => {
-            const checkbox = document.createElement("input");
-            checkbox.type = "checkbox";
-            checkbox.className = "checkbox-input";
-            checkbox.id = setId + "Checkbox" + index;
-      
-            const label = document.createElement("label");
-            label.className = "checkbox-wrapper";
-            label.htmlFor = setId + "Checkbox" + index;
-      
-            const tile = document.createElement("span");
-            tile.className = "checkbox-tile";
-      
-            const labelSpan = document.createElement("span");
-            labelSpan.className = "checkbox-label";
-            labelSpan.textContent = category;
-      
-            tile.appendChild(labelSpan);
-            label.appendChild(checkbox);
-            label.appendChild(tile);
-            categorySet.appendChild(label);
-          });
-      
-          document.body.insertBefore(categorySet, document.getElementById("nextButton"));
+        document.getElementById(`categorySet${currentStep}`).style.display = "none";
+      }
+
+      function createCategorySet(categories, setId, includeSelectAll = false) {
+        const existingSet = document.getElementById(setId);
+        if (existingSet) {
+          existingSet.remove();
         }
-      
-        function collectSelectedCategories(setId) {
-          const categorySet = document.getElementById(setId);
-          let selectedOptions = [];
-          if (categorySet) {
-            const checkboxes = categorySet.querySelectorAll('input[type="checkbox"]:checked');
+
+        const categorySet = document.createElement("fieldset");
+        categorySet.className = "checkbox-group";
+        categorySet.id = setId;
+
+        if (includeSelectAll) {
+          const selectAllWrapper = document.createElement("label");
+          selectAllWrapper.className = "checkbox-wrapper";
+          const selectAllInput = document.createElement("input");
+          selectAllInput.type = "checkbox";
+          selectAllInput.className = "checkbox-input";
+          selectAllInput.id = `selectAll${currentStep}`;
+          selectAllInput.addEventListener("change", function() {
+            const checkboxes = document.querySelectorAll(`#${setId} .checkbox-input:not(#${this.id})`);
             checkboxes.forEach((checkbox) => {
-              const label = checkbox.nextElementSibling.querySelector('.checkbox-label').textContent;
-              selectedOptions.push(label.trim());
-              if (!selectedCategories.includes(label.trim())) {
-                selectedCategories.push(label.trim());
-              }
+              checkbox.checked = this.checked;
             });
-      
-            categorySet.style.display = "none"; // 현재 카테고리 세트 숨김
-          }
-          return selectedOptions;
+          });
+          const selectAllTile = document.createElement("span");
+          selectAllTile.className = "checkbox-tile";
+          const selectAllLabel = document.createElement("span");
+          selectAllLabel.className = "checkbox-label";
+          selectAllLabel.textContent = "모두 선택";
+          selectAllTile.appendChild(selectAllLabel);
+          selectAllWrapper.appendChild(selectAllInput);
+          selectAllWrapper.appendChild(selectAllTile);
+          categorySet.appendChild(selectAllWrapper);
         }
-      
-        function displaySelectedCategories() {
-          const summaryDiv = document.createElement("div");
-          summaryDiv.innerHTML = "<h2>선택한 카테고리:</h2>" + selectedCategories.join(", ");
-          document.body.appendChild(summaryDiv);
-          // 결과 링크 표시
-          const resultLink = document.getElementById("resultLink");
-          resultLink.style.display = "inline-block";
-        }
-      </script>
-      
+
+        categories.forEach((category, index) => {
+          const label = document.createElement("label");
+          label.className = "checkbox-wrapper";
+          const input = document.createElement("input");
+          input.type = "checkbox";
+          input.className = "checkbox-input";
+          input.id = `${setId}-${index}`;
+          const spanTile = document.createElement("span");
+          spanTile.className = "checkbox-tile";
+          const spanLabel = document.createElement("span");
+          spanLabel.className = "checkbox-label";
+          spanLabel.textContent = category;
+          spanTile.appendChild(spanLabel);
+          label.appendChild(input);
+          label.appendChild(spanTile);
+          categorySet.appendChild(label);
+        });
+
+        document.body.insertBefore(categorySet, document.getElementById("nextButton"));
+      }
+
+      function displaySelectedCategories() {
+        const summaryDiv = document.getElementById("selectedCategories");
+        summaryDiv.innerHTML = `<h2>선택한 카테고리:</h2> ${selectedCategories.join(", ")}`;
+        summaryDiv.style.display = "block";
+
+        const resultLink = document.getElementById("resultLink");
+        resultLink.style.display = "inline-block"; 
+      }
+    });
+  </script>
 </body>
-</html>
-  </body>
 </html>
